@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Predictor Page Logic
+   LS Predictor — Predictor Page Logic
    Handles: exam selection, input toggle, API
    prediction calls, results rendering,
    sorting, pagination, and lead capture.
@@ -45,7 +45,8 @@ var Predictor = (function () {
       iconText: 'NEE',
       description: 'Medical & Dental',
       categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
-      branches: ['MBBS', 'BDS', 'BAMS', 'BHMS']
+      branches: ['MBBS', 'BDS', 'BAMS', 'BHMS'],
+      disabled: true
     },
     {
       id: 'comedk',
@@ -55,8 +56,9 @@ var Predictor = (function () {
       iconClass: 'comedk',
       iconText: 'COM',
       description: 'Karnataka Engg.',
-      categories: ['General', 'SC', 'ST', 'OBC'],
-      branches: ['Computer Science', 'Information Science', 'Electronics', 'Electrical', 'Mechanical', 'Civil']
+      categories: ['GM', 'KKR'],
+      branches: ['Computer Science and Engineering', 'Electronics and Communication Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Civil Engineering', 'Chemical Engineering'],
+      rounds: ['Round 1', 'Round 2', 'Round 3']
     },
     {
       id: 'srm',
@@ -116,6 +118,9 @@ var Predictor = (function () {
     dom.leadSuccessMsg = document.getElementById('leadSuccessMsg');
     dom.leadSubmitBtn = document.getElementById('leadSubmitBtn');
     // Gate modal
+    dom.roundFilter = document.getElementById('roundFilter');
+    dom.roundFilterGroup = document.getElementById('roundFilterGroup');
+    dom.roundFilterDivider = document.getElementById('roundFilterDivider');
     dom.leadGateOverlay = document.getElementById('leadGateOverlay');
     dom.leadGateForm = document.getElementById('leadGateForm');
     dom.leadGateSubmit = document.getElementById('leadGateSubmit');
@@ -289,12 +294,13 @@ var Predictor = (function () {
       var iconText = exam.iconText || mapped.text || exam.name.substring(0, 3).toUpperCase();
       var description = exam.description || '';
 
-      html += '<div class="exam-option">' +
-        '<input type="radio" name="exam" id="exam-' + exam.id + '" value="' + exam.id + '">' +
+      var isDisabled = exam.disabled === true;
+      html += '<div class="exam-option' + (isDisabled ? ' exam-option-disabled' : '') + '">' +
+        '<input type="radio" name="exam" id="exam-' + exam.id + '" value="' + exam.id + '"' + (isDisabled ? ' disabled' : '') + '>' +
         '<label for="exam-' + exam.id + '">' +
           '<div class="exam-option-icon ' + iconClass + '">' + iconText + '</div>' +
           '<span class="exam-option-name">' + escapeHtml(exam.name) + '</span>' +
-          '<span class="exam-option-desc">' + escapeHtml(description) + '</span>' +
+          '<span class="exam-option-desc">' + escapeHtml(isDisabled ? 'Coming Soon' : description) + '</span>' +
         '</label>' +
       '</div>';
     });
@@ -337,6 +343,9 @@ var Predictor = (function () {
 
     // Populate branch dropdown
     populateBranches(exam.branches || []);
+
+    // Show/hide round dropdown
+    populateRounds(exam.rounds || []);
 
     // Enable predict button
     dom.predictBtn.disabled = false;
@@ -388,6 +397,32 @@ var Predictor = (function () {
       opt.textContent = branch;
       dom.branchFilter.appendChild(opt);
     });
+  }
+
+  // ---- Populate Round Dropdown ----
+  function populateRounds(rounds) {
+    if (!dom.roundFilter || !dom.roundFilterGroup || !dom.roundFilterDivider) return;
+
+    if (!rounds || rounds.length === 0) {
+      dom.roundFilterGroup.style.display = 'none';
+      dom.roundFilterDivider.style.display = 'none';
+      dom.roundFilter.innerHTML = '<option value="">All Rounds</option>';
+      return;
+    }
+
+    dom.roundFilterGroup.style.display = '';
+    dom.roundFilterDivider.style.display = '';
+
+    dom.roundFilter.innerHTML = '<option value="">All Rounds</option>';
+    rounds.forEach(function (round) {
+      var opt = document.createElement('option');
+      opt.value = round;
+      opt.textContent = round;
+      dom.roundFilter.appendChild(opt);
+    });
+
+    // Default to the latest round (last in sorted list)
+    dom.roundFilter.value = rounds[rounds.length - 1];
   }
 
   // ---- Input Toggle (Marks / Rank) ----
@@ -486,6 +521,7 @@ var Predictor = (function () {
     var inputValue = parseFloat(dom.inputValue.value.trim());
     var category = dom.categoryFilter ? dom.categoryFilter.value : '';
     var branch = dom.branchFilter ? dom.branchFilter.value : '';
+    var round = dom.roundFilter ? dom.roundFilter.value : '';
 
     // Show loading
     showLoading();
@@ -498,7 +534,8 @@ var Predictor = (function () {
         inputType: inputMode,
         inputValue: inputValue,
         category: category,
-        branch: branch
+        branch: branch,
+        round: round
       };
 
       var response = await post('/predictor/predict', payload);

@@ -1,7 +1,7 @@
 {
-  "name": "comedk-official-backend",
+  "name": "ls-predictor-backend",
   "version": "1.0.0",
-  "description": "Backend API for COMEDK Official - College Admission CRM & Rank Predictor",
+  "description": "Backend API for LS Predictor - College Admission CRM & Rank Predictor",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

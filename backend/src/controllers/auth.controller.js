@@ -15,4 +15,14 @@ const verify = async (req, res) => {
   return success(res, { user: req.user }, 'Token is valid');
 };
 
-module.exports = { login, verify };
+const changePassword = async (req, res, next) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+    await authService.changePassword(req.user._id, currentPassword, newPassword);
+    return success(res, null, 'Password changed successfully');
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = { login, verify, changePassword };

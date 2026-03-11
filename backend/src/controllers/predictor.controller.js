@@ -13,7 +13,7 @@ const getExams = async (req, res, next) => {
 
 const predict = async (req, res, next) => {
   try {
-    const { exam, inputType, inputValue, category, branch } = req.body;
+    const { exam, inputType, inputValue, category, branch, round } = req.body;
 
     if (!exam) {
       return res.status(400).json({
@@ -42,6 +42,7 @@ const predict = async (req, res, next) => {
       inputValue,
       category: category || '__all__',
       branch: branch || '__all__',
+      round: round || '__all__',
     });
 
     // Collect the categories & branches available for this exam so the
@@ -58,6 +59,7 @@ const predict = async (req, res, next) => {
       filters: {
         categories: examMeta ? examMeta.categories : [],
         branches: examMeta ? examMeta.branches : [],
+        rounds: examMeta && examMeta.rounds ? examMeta.rounds : [],
       },
     };
 

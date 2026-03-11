@@ -25,7 +25,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/api/health', (req, res) => {
-  res.json({ success: true, message: 'COMEDK Official API is running', timestamp: new Date().toISOString() });
+  res.json({ success: true, message: 'LS Predictor API is running', timestamp: new Date().toISOString() });
 });
 
 app.use('/api/auth', authRoutes);
@@ -51,7 +51,7 @@ const startServer = async () => {
     await connectDB();
 
     app.listen(PORT, () => {
-      console.log(`COMEDK Official API server running on port ${PORT}`);
+      console.log(`LS Predictor API server running on port ${PORT}`);
       console.log(`Health check: http://localhost:${PORT}/api/health`);
     });
   } catch (err) {

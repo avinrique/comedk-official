@@ -1,14 +1,42 @@
-name,branch,category,cutoff_rank,year
-SRM Institute of Science and Technology - Kattankulathur,Computer Science and Engineering,General,5000,2024
-SRM Institute of Science and Technology - Kattankulathur,Electronics and Communication Engineering,General,15000,2024
-SRM Institute of Science and Technology - Kattankulathur,Mechanical Engineering,General,40000,2024
-SRM Institute of Science and Technology - Kattankulathur,Electrical and Electronics Engineering,General,25000,2024
-SRM Institute of Science and Technology - Kattankulathur,Information Technology,General,8000,2024
-SRM Institute of Science and Technology - Kattankulathur,Biotechnology,General,50000,2024
-SRM Institute of Science and Technology - Ramapuram,Computer Science and Engineering,General,20000,2024
-SRM Institute of Science and Technology - Ramapuram,Electronics and Communication Engineering,General,45000,2024
-SRM Institute of Science and Technology - Ramapuram,Information Technology,General,30000,2024
-SRM Institute of Science and Technology - Vadapalani,Computer Science and Engineering,General,35000,2024
-SRM Institute of Science and Technology - Amaravati,Computer Science and Engineering,General,55000,2024
-SRM Institute of Science and Technology - Amaravati,Electronics and Communication Engineering,General,80000,2024
-SRM Institute of Science and Technology - Sonepat,Computer Science and Engineering,General,60000,2024
+name,branch,category,cutoff_rank
+SRM Institute of Science and Technology - Kattankulathur,Computer Science and Engineering,General,9500
+SRM Institute of Science and Technology - Kattankulathur,Information Technology,General,13800
+SRM Institute of Science and Technology - Kattankulathur,Electronics and Communication Engineering,General,26700
+SRM Institute of Science and Technology - Kattankulathur,Mechanical Engineering,General,29500
+SRM Institute of Science and Technology - Kattankulathur,Electrical and Electronics Engineering,General,40000
+SRM Institute of Science and Technology - Kattankulathur,Biotechnology,General,48000
+SRM Institute of Science and Technology - Kattankulathur,Aerospace Engineering,General,52000
+SRM Institute of Science and Technology - Kattankulathur,Biomedical Engineering,General,54000
+SRM Institute of Science and Technology - Kattankulathur,Automobile Engineering,General,55000
+SRM Institute of Science and Technology - Kattankulathur,Electronics and Instrumentation Engineering,General,61000
+SRM Institute of Science and Technology - Kattankulathur,Genetic Engineering,General,62000
+SRM Institute of Science and Technology - Kattankulathur,Chemical Engineering,General,70000
+SRM Institute of Science and Technology - Kattankulathur,Civil Engineering,General,70000
+SRM Institute of Science and Technology - Ramapuram,Computer Science and Engineering,General,62000
+SRM Institute of Science and Technology - Ramapuram,Information Technology,General,67000
+SRM Institute of Science and Technology - Ramapuram,Electronics and Communication Engineering,General,69000
+SRM Institute of Science and Technology - Ramapuram,Mechanical Engineering,General,65000
+SRM Institute of Science and Technology - Ramapuram,Electrical and Electronics Engineering,General,70000
+SRM Institute of Science and Technology - Ramapuram,Civil Engineering,General,70000
+SRM Institute of Science and Technology - Vadapalani,Computer Science and Engineering,General,60000
+SRM Institute of Science and Technology - Vadapalani,Electronics and Communication Engineering,General,63000
+SRM Institute of Science and Technology - Vadapalani,Mechanical Engineering,General,64000
+SRM Institute of Science and Technology - NCR Ghaziabad,Computer Science and Engineering,General,55000
+SRM Institute of Science and Technology - NCR Ghaziabad,Information Technology,General,65000
+SRM Institute of Science and Technology - NCR Ghaziabad,Electronics and Communication Engineering,General,65000
+SRM Institute of Science and Technology - NCR Ghaziabad,Mechanical Engineering,General,65000
+SRM Institute of Science and Technology - NCR Ghaziabad,Electrical and Electronics Engineering,General,65000
+SRM Institute of Science and Technology - NCR Ghaziabad,Civil Engineering,General,68000
+SRM Institute of Science and Technology - NCR Ghaziabad,Automobile Engineering,General,70000
+SRM Institute of Science and Technology - Amaravati,Computer Science and Engineering,General,4579
+SRM Institute of Science and Technology - Amaravati,Electronics and Communication Engineering,General,4976
+SRM Institute of Science and Technology - Amaravati,Mechanical Engineering,General,5094
+SRM Institute of Science and Technology - Amaravati,Electrical and Electronics Engineering,General,5899
+SRM Institute of Science and Technology - Amaravati,Civil Engineering,General,10911
+SRM Institute of Science and Technology - Sonepat,Computer Science and Engineering,General,63000
+SRM Institute of Science and Technology - Sonepat,Electronics and Communication Engineering,General,65000
+SRM Institute of Science and Technology - Sonepat,Mechanical Engineering,General,65000
+SRM Institute of Science and Technology - Sonepat,Electrical and Electronics Engineering,General,65000
+SRM Institute of Science and Technology - Sonepat,Biomedical Engineering,General,70000
+SRM Institute of Science and Technology - Sonepat,Bioinformatics,General,65000
+SRM Institute of Science and Technology - Sonepat,Civil Engineering,General,70000

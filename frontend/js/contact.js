@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Contact Form Handler
+   LS Predictor — Contact Form Handler
    Validates form, submits to API, shows feedback.
    ============================================ */
 

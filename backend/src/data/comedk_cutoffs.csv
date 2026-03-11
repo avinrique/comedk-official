@@ -1,79 +1,241 @@
-College,Branch,Category,Closing Rank
-RV College of Engineering Bangalore,Computer Science and Engineering,General,280
-RV College of Engineering Bangalore,Computer Science and Engineering,OBC,150
-RV College of Engineering Bangalore,Computer Science and Engineering,SC,80
-RV College of Engineering Bangalore,Computer Science and Engineering,ST,45
-RV College of Engineering Bangalore,Electronics and Communication Engineering,General,850
-RV College of Engineering Bangalore,Electronics and Communication Engineering,OBC,420
-RV College of Engineering Bangalore,Electrical Engineering,General,2200
-RV College of Engineering Bangalore,Mechanical Engineering,General,3500
-RV College of Engineering Bangalore,Civil Engineering,General,6000
-RV College of Engineering Bangalore,Chemical Engineering,General,8500
-BMS College of Engineering Bangalore,Computer Science and Engineering,General,420
-BMS College of Engineering Bangalore,Computer Science and Engineering,OBC,210
-BMS College of Engineering Bangalore,Computer Science and Engineering,SC,110
-BMS College of Engineering Bangalore,Electronics and Communication Engineering,General,1100
-BMS College of Engineering Bangalore,Electronics and Communication Engineering,OBC,550
-BMS College of Engineering Bangalore,Electrical Engineering,General,2800
-BMS College of Engineering Bangalore,Mechanical Engineering,General,4200
-BMS College of Engineering Bangalore,Civil Engineering,General,7500
-MS Ramaiah Institute of Technology Bangalore,Computer Science and Engineering,General,600
-MS Ramaiah Institute of Technology Bangalore,Computer Science and Engineering,OBC,300
-MS Ramaiah Institute of Technology Bangalore,Computer Science and Engineering,SC,160
-MS Ramaiah Institute of Technology Bangalore,Electronics and Communication Engineering,General,1500
-MS Ramaiah Institute of Technology Bangalore,Electronics and Communication Engineering,OBC,750
-MS Ramaiah Institute of Technology Bangalore,Electrical Engineering,General,3500
-MS Ramaiah Institute of Technology Bangalore,Mechanical Engineering,General,5200
-MS Ramaiah Institute of Technology Bangalore,Civil Engineering,General,9000
-PES University Bangalore,Computer Science and Engineering,General,350
-PES University Bangalore,Computer Science and Engineering,OBC,175
-PES University Bangalore,Computer Science and Engineering,SC,95
-PES University Bangalore,Electronics and Communication Engineering,General,900
-PES University Bangalore,Electronics and Communication Engineering,OBC,450
-PES University Bangalore,Electrical Engineering,General,2400
-PES University Bangalore,Mechanical Engineering,General,3800
-Dayananda Sagar College of Engineering Bangalore,Computer Science and Engineering,General,1800
-Dayananda Sagar College of Engineering Bangalore,Computer Science and Engineering,OBC,900
-Dayananda Sagar College of Engineering Bangalore,Electronics and Communication Engineering,General,3800
-Dayananda Sagar College of Engineering Bangalore,Electrical Engineering,General,7500
-Dayananda Sagar College of Engineering Bangalore,Mechanical Engineering,General,10000
-BNM Institute of Technology Bangalore,Computer Science and Engineering,General,2500
-BNM Institute of Technology Bangalore,Electronics and Communication Engineering,General,5500
-BNM Institute of Technology Bangalore,Electrical Engineering,General,9500
-BNM Institute of Technology Bangalore,Mechanical Engineering,General,13000
-JSS Science and Technology University Mysore,Computer Science and Engineering,General,2200
-JSS Science and Technology University Mysore,Computer Science and Engineering,OBC,1100
-JSS Science and Technology University Mysore,Electronics and Communication Engineering,General,4800
-JSS Science and Technology University Mysore,Electrical Engineering,General,8000
-JSS Science and Technology University Mysore,Mechanical Engineering,General,11000
-JSS Science and Technology University Mysore,Civil Engineering,General,16000
-New Horizon College of Engineering Bangalore,Computer Science and Engineering,General,3200
-New Horizon College of Engineering Bangalore,Electronics and Communication Engineering,General,6800
-New Horizon College of Engineering Bangalore,Mechanical Engineering,General,14000
-Siddaganga Institute of Technology Tumkur,Computer Science and Engineering,General,2800
-Siddaganga Institute of Technology Tumkur,Computer Science and Engineering,OBC,1400
-Siddaganga Institute of Technology Tumkur,Electronics and Communication Engineering,General,6000
-Siddaganga Institute of Technology Tumkur,Electrical Engineering,General,10000
-Siddaganga Institute of Technology Tumkur,Mechanical Engineering,General,12000
-Siddaganga Institute of Technology Tumkur,Civil Engineering,General,18000
-NMAM Institute of Technology Nitte,Computer Science and Engineering,General,4000
-NMAM Institute of Technology Nitte,Electronics and Communication Engineering,General,8500
-NMAM Institute of Technology Nitte,Mechanical Engineering,General,16000
-Manipal Institute of Technology,Computer Science and Engineering,General,500
-Manipal Institute of Technology,Computer Science and Engineering,OBC,250
-Manipal Institute of Technology,Electronics and Communication Engineering,General,1200
-Manipal Institute of Technology,Electrical Engineering,General,3000
-Manipal Institute of Technology,Mechanical Engineering,General,4500
-Manipal Institute of Technology,Chemical Engineering,General,9000
-Manipal Institute of Technology,Civil Engineering,General,10000
-SDM College of Engineering Dharwad,Computer Science and Engineering,General,5000
-SDM College of Engineering Dharwad,Electronics and Communication Engineering,General,10000
-SDM College of Engineering Dharwad,Mechanical Engineering,General,18000
-SDM College of Engineering Dharwad,Civil Engineering,General,22000
-KLE Technological University Hubballi,Computer Science and Engineering,General,3500
-KLE Technological University Hubballi,Electronics and Communication Engineering,General,7500
-KLE Technological University Hubballi,Mechanical Engineering,General,14000
-KLE Technological University Hubballi,Civil Engineering,General,20000
-DSCE Bangalore,Computer Science and Engineering,General,4200
-DSCE Bangalore,Electronics and Communication Engineering,General,9000
-DSCE Bangalore,Mechanical Engineering,General,16000
+College,Branch,Category,Closing Rank,Round
+RV College of Engineering Bangalore,Computer Science and Engineering,GM,220,Round 1
+RV College of Engineering Bangalore,Computer Science and Engineering,GM,260,Round 2
+RV College of Engineering Bangalore,Computer Science and Engineering,GM,310,Round 3
+RV College of Engineering Bangalore,Computer Science and Engineering,KKR,340,Round 1
+RV College of Engineering Bangalore,Computer Science and Engineering,KKR,400,Round 2
+RV College of Engineering Bangalore,Computer Science and Engineering,KKR,480,Round 3
+RV College of Engineering Bangalore,Electronics and Communication Engineering,GM,680,Round 1
+RV College of Engineering Bangalore,Electronics and Communication Engineering,GM,800,Round 2
+RV College of Engineering Bangalore,Electronics and Communication Engineering,GM,950,Round 3
+RV College of Engineering Bangalore,Electronics and Communication Engineering,KKR,1050,Round 1
+RV College of Engineering Bangalore,Electronics and Communication Engineering,KKR,1250,Round 2
+RV College of Engineering Bangalore,Electronics and Communication Engineering,KKR,1480,Round 3
+RV College of Engineering Bangalore,Electrical Engineering,GM,1800,Round 1
+RV College of Engineering Bangalore,Electrical Engineering,GM,2100,Round 2
+RV College of Engineering Bangalore,Electrical Engineering,GM,2500,Round 3
+RV College of Engineering Bangalore,Mechanical Engineering,GM,2800,Round 1
+RV College of Engineering Bangalore,Mechanical Engineering,GM,3300,Round 2
+RV College of Engineering Bangalore,Mechanical Engineering,GM,3900,Round 3
+RV College of Engineering Bangalore,Civil Engineering,GM,4800,Round 1
+RV College of Engineering Bangalore,Civil Engineering,GM,5700,Round 2
+RV College of Engineering Bangalore,Civil Engineering,GM,6700,Round 3
+RV College of Engineering Bangalore,Chemical Engineering,GM,6800,Round 1
+RV College of Engineering Bangalore,Chemical Engineering,GM,8000,Round 2
+RV College of Engineering Bangalore,Chemical Engineering,GM,9500,Round 3
+BMS College of Engineering Bangalore,Computer Science and Engineering,GM,330,Round 1
+BMS College of Engineering Bangalore,Computer Science and Engineering,GM,390,Round 2
+BMS College of Engineering Bangalore,Computer Science and Engineering,GM,470,Round 3
+BMS College of Engineering Bangalore,Computer Science and Engineering,KKR,510,Round 1
+BMS College of Engineering Bangalore,Computer Science and Engineering,KKR,610,Round 2
+BMS College of Engineering Bangalore,Computer Science and Engineering,KKR,720,Round 3
+BMS College of Engineering Bangalore,Electronics and Communication Engineering,GM,880,Round 1
+BMS College of Engineering Bangalore,Electronics and Communication Engineering,GM,1040,Round 2
+BMS College of Engineering Bangalore,Electronics and Communication Engineering,GM,1230,Round 3
+BMS College of Engineering Bangalore,Electronics and Communication Engineering,KKR,1360,Round 1
+BMS College of Engineering Bangalore,Electronics and Communication Engineering,KKR,1600,Round 2
+BMS College of Engineering Bangalore,Electronics and Communication Engineering,KKR,1900,Round 3
+BMS College of Engineering Bangalore,Electrical Engineering,GM,2240,Round 1
+BMS College of Engineering Bangalore,Electrical Engineering,GM,2650,Round 2
+BMS College of Engineering Bangalore,Electrical Engineering,GM,3100,Round 3
+BMS College of Engineering Bangalore,Mechanical Engineering,GM,3360,Round 1
+BMS College of Engineering Bangalore,Mechanical Engineering,GM,3970,Round 2
+BMS College of Engineering Bangalore,Mechanical Engineering,GM,4700,Round 3
+BMS College of Engineering Bangalore,Civil Engineering,GM,6000,Round 1
+BMS College of Engineering Bangalore,Civil Engineering,GM,7100,Round 2
+BMS College of Engineering Bangalore,Civil Engineering,GM,8400,Round 3
+MS Ramaiah Institute of Technology Bangalore,Computer Science and Engineering,GM,480,Round 1
+MS Ramaiah Institute of Technology Bangalore,Computer Science and Engineering,GM,560,Round 2
+MS Ramaiah Institute of Technology Bangalore,Computer Science and Engineering,GM,670,Round 3
+MS Ramaiah Institute of Technology Bangalore,Computer Science and Engineering,KKR,740,Round 1
+MS Ramaiah Institute of Technology Bangalore,Computer Science and Engineering,KKR,870,Round 2
+MS Ramaiah Institute of Technology Bangalore,Computer Science and Engineering,KKR,1030,Round 3
+MS Ramaiah Institute of Technology Bangalore,Electronics and Communication Engineering,GM,1200,Round 1
+MS Ramaiah Institute of Technology Bangalore,Electronics and Communication Engineering,GM,1420,Round 2
+MS Ramaiah Institute of Technology Bangalore,Electronics and Communication Engineering,GM,1680,Round 3
+MS Ramaiah Institute of Technology Bangalore,Electronics and Communication Engineering,KKR,1860,Round 1
+MS Ramaiah Institute of Technology Bangalore,Electronics and Communication Engineering,KKR,2190,Round 2
+MS Ramaiah Institute of Technology Bangalore,Electronics and Communication Engineering,KKR,2600,Round 3
+MS Ramaiah Institute of Technology Bangalore,Electrical Engineering,GM,2800,Round 1
+MS Ramaiah Institute of Technology Bangalore,Electrical Engineering,GM,3300,Round 2
+MS Ramaiah Institute of Technology Bangalore,Electrical Engineering,GM,3900,Round 3
+MS Ramaiah Institute of Technology Bangalore,Mechanical Engineering,GM,4160,Round 1
+MS Ramaiah Institute of Technology Bangalore,Mechanical Engineering,GM,4900,Round 2
+MS Ramaiah Institute of Technology Bangalore,Mechanical Engineering,GM,5800,Round 3
+MS Ramaiah Institute of Technology Bangalore,Civil Engineering,GM,7200,Round 1
+MS Ramaiah Institute of Technology Bangalore,Civil Engineering,GM,8500,Round 2
+MS Ramaiah Institute of Technology Bangalore,Civil Engineering,GM,10100,Round 3
+PES University Bangalore,Computer Science and Engineering,GM,280,Round 1
+PES University Bangalore,Computer Science and Engineering,GM,330,Round 2
+PES University Bangalore,Computer Science and Engineering,GM,390,Round 3
+PES University Bangalore,Computer Science and Engineering,KKR,430,Round 1
+PES University Bangalore,Computer Science and Engineering,KKR,510,Round 2
+PES University Bangalore,Computer Science and Engineering,KKR,600,Round 3
+PES University Bangalore,Electronics and Communication Engineering,GM,720,Round 1
+PES University Bangalore,Electronics and Communication Engineering,GM,850,Round 2
+PES University Bangalore,Electronics and Communication Engineering,GM,1010,Round 3
+PES University Bangalore,Electronics and Communication Engineering,KKR,1110,Round 1
+PES University Bangalore,Electronics and Communication Engineering,KKR,1310,Round 2
+PES University Bangalore,Electronics and Communication Engineering,KKR,1560,Round 3
+PES University Bangalore,Electrical Engineering,GM,1920,Round 1
+PES University Bangalore,Electrical Engineering,GM,2270,Round 2
+PES University Bangalore,Electrical Engineering,GM,2680,Round 3
+PES University Bangalore,Mechanical Engineering,GM,3040,Round 1
+PES University Bangalore,Mechanical Engineering,GM,3590,Round 2
+PES University Bangalore,Mechanical Engineering,GM,4250,Round 3
+Dayananda Sagar College of Engineering Bangalore,Computer Science and Engineering,GM,1440,Round 1
+Dayananda Sagar College of Engineering Bangalore,Computer Science and Engineering,GM,1700,Round 2
+Dayananda Sagar College of Engineering Bangalore,Computer Science and Engineering,GM,2010,Round 3
+Dayananda Sagar College of Engineering Bangalore,Computer Science and Engineering,KKR,2220,Round 1
+Dayananda Sagar College of Engineering Bangalore,Computer Science and Engineering,KKR,2620,Round 2
+Dayananda Sagar College of Engineering Bangalore,Computer Science and Engineering,KKR,3100,Round 3
+Dayananda Sagar College of Engineering Bangalore,Electronics and Communication Engineering,GM,3040,Round 1
+Dayananda Sagar College of Engineering Bangalore,Electronics and Communication Engineering,GM,3590,Round 2
+Dayananda Sagar College of Engineering Bangalore,Electronics and Communication Engineering,GM,4250,Round 3
+Dayananda Sagar College of Engineering Bangalore,Electrical Engineering,GM,6000,Round 1
+Dayananda Sagar College of Engineering Bangalore,Electrical Engineering,GM,7100,Round 2
+Dayananda Sagar College of Engineering Bangalore,Electrical Engineering,GM,8400,Round 3
+Dayananda Sagar College of Engineering Bangalore,Mechanical Engineering,GM,8000,Round 1
+Dayananda Sagar College of Engineering Bangalore,Mechanical Engineering,GM,9400,Round 2
+Dayananda Sagar College of Engineering Bangalore,Mechanical Engineering,GM,11200,Round 3
+BNM Institute of Technology Bangalore,Computer Science and Engineering,GM,2000,Round 1
+BNM Institute of Technology Bangalore,Computer Science and Engineering,GM,2360,Round 2
+BNM Institute of Technology Bangalore,Computer Science and Engineering,GM,2800,Round 3
+BNM Institute of Technology Bangalore,Computer Science and Engineering,KKR,3080,Round 1
+BNM Institute of Technology Bangalore,Computer Science and Engineering,KKR,3640,Round 2
+BNM Institute of Technology Bangalore,Computer Science and Engineering,KKR,4300,Round 3
+BNM Institute of Technology Bangalore,Electronics and Communication Engineering,GM,4400,Round 1
+BNM Institute of Technology Bangalore,Electronics and Communication Engineering,GM,5200,Round 2
+BNM Institute of Technology Bangalore,Electronics and Communication Engineering,GM,6150,Round 3
+BNM Institute of Technology Bangalore,Electrical Engineering,GM,7600,Round 1
+BNM Institute of Technology Bangalore,Electrical Engineering,GM,8970,Round 2
+BNM Institute of Technology Bangalore,Electrical Engineering,GM,10600,Round 3
+BNM Institute of Technology Bangalore,Mechanical Engineering,GM,10400,Round 1
+BNM Institute of Technology Bangalore,Mechanical Engineering,GM,12300,Round 2
+BNM Institute of Technology Bangalore,Mechanical Engineering,GM,14500,Round 3
+JSS Science and Technology University Mysore,Computer Science and Engineering,GM,1760,Round 1
+JSS Science and Technology University Mysore,Computer Science and Engineering,GM,2080,Round 2
+JSS Science and Technology University Mysore,Computer Science and Engineering,GM,2460,Round 3
+JSS Science and Technology University Mysore,Computer Science and Engineering,KKR,2720,Round 1
+JSS Science and Technology University Mysore,Computer Science and Engineering,KKR,3210,Round 2
+JSS Science and Technology University Mysore,Computer Science and Engineering,KKR,3800,Round 3
+JSS Science and Technology University Mysore,Electronics and Communication Engineering,GM,3840,Round 1
+JSS Science and Technology University Mysore,Electronics and Communication Engineering,GM,4540,Round 2
+JSS Science and Technology University Mysore,Electronics and Communication Engineering,GM,5370,Round 3
+JSS Science and Technology University Mysore,Electrical Engineering,GM,6400,Round 1
+JSS Science and Technology University Mysore,Electrical Engineering,GM,7550,Round 2
+JSS Science and Technology University Mysore,Electrical Engineering,GM,8950,Round 3
+JSS Science and Technology University Mysore,Mechanical Engineering,GM,8800,Round 1
+JSS Science and Technology University Mysore,Mechanical Engineering,GM,10400,Round 2
+JSS Science and Technology University Mysore,Mechanical Engineering,GM,12300,Round 3
+JSS Science and Technology University Mysore,Civil Engineering,GM,12800,Round 1
+JSS Science and Technology University Mysore,Civil Engineering,GM,15100,Round 2
+JSS Science and Technology University Mysore,Civil Engineering,GM,17900,Round 3
+New Horizon College of Engineering Bangalore,Computer Science and Engineering,GM,2560,Round 1
+New Horizon College of Engineering Bangalore,Computer Science and Engineering,GM,3020,Round 2
+New Horizon College of Engineering Bangalore,Computer Science and Engineering,GM,3580,Round 3
+New Horizon College of Engineering Bangalore,Computer Science and Engineering,KKR,3950,Round 1
+New Horizon College of Engineering Bangalore,Computer Science and Engineering,KKR,4660,Round 2
+New Horizon College of Engineering Bangalore,Computer Science and Engineering,KKR,5520,Round 3
+New Horizon College of Engineering Bangalore,Electronics and Communication Engineering,GM,5440,Round 1
+New Horizon College of Engineering Bangalore,Electronics and Communication Engineering,GM,6430,Round 2
+New Horizon College of Engineering Bangalore,Electronics and Communication Engineering,GM,7600,Round 3
+New Horizon College of Engineering Bangalore,Mechanical Engineering,GM,11200,Round 1
+New Horizon College of Engineering Bangalore,Mechanical Engineering,GM,13200,Round 2
+New Horizon College of Engineering Bangalore,Mechanical Engineering,GM,15700,Round 3
+Siddaganga Institute of Technology Tumkur,Computer Science and Engineering,GM,2240,Round 1
+Siddaganga Institute of Technology Tumkur,Computer Science and Engineering,GM,2640,Round 2
+Siddaganga Institute of Technology Tumkur,Computer Science and Engineering,GM,3130,Round 3
+Siddaganga Institute of Technology Tumkur,Computer Science and Engineering,KKR,3460,Round 1
+Siddaganga Institute of Technology Tumkur,Computer Science and Engineering,KKR,4080,Round 2
+Siddaganga Institute of Technology Tumkur,Computer Science and Engineering,KKR,4830,Round 3
+Siddaganga Institute of Technology Tumkur,Electronics and Communication Engineering,GM,4800,Round 1
+Siddaganga Institute of Technology Tumkur,Electronics and Communication Engineering,GM,5670,Round 2
+Siddaganga Institute of Technology Tumkur,Electronics and Communication Engineering,GM,6710,Round 3
+Siddaganga Institute of Technology Tumkur,Electrical Engineering,GM,8000,Round 1
+Siddaganga Institute of Technology Tumkur,Electrical Engineering,GM,9440,Round 2
+Siddaganga Institute of Technology Tumkur,Electrical Engineering,GM,11200,Round 3
+Siddaganga Institute of Technology Tumkur,Mechanical Engineering,GM,9600,Round 1
+Siddaganga Institute of Technology Tumkur,Mechanical Engineering,GM,11300,Round 2
+Siddaganga Institute of Technology Tumkur,Mechanical Engineering,GM,13400,Round 3
+Siddaganga Institute of Technology Tumkur,Civil Engineering,GM,14400,Round 1
+Siddaganga Institute of Technology Tumkur,Civil Engineering,GM,17000,Round 2
+Siddaganga Institute of Technology Tumkur,Civil Engineering,GM,20100,Round 3
+NMAM Institute of Technology Nitte,Computer Science and Engineering,GM,3200,Round 1
+NMAM Institute of Technology Nitte,Computer Science and Engineering,GM,3780,Round 2
+NMAM Institute of Technology Nitte,Computer Science and Engineering,GM,4470,Round 3
+NMAM Institute of Technology Nitte,Computer Science and Engineering,KKR,4940,Round 1
+NMAM Institute of Technology Nitte,Computer Science and Engineering,KKR,5830,Round 2
+NMAM Institute of Technology Nitte,Computer Science and Engineering,KKR,6900,Round 3
+NMAM Institute of Technology Nitte,Electronics and Communication Engineering,GM,6800,Round 1
+NMAM Institute of Technology Nitte,Electronics and Communication Engineering,GM,8030,Round 2
+NMAM Institute of Technology Nitte,Electronics and Communication Engineering,GM,9500,Round 3
+NMAM Institute of Technology Nitte,Mechanical Engineering,GM,12800,Round 1
+NMAM Institute of Technology Nitte,Mechanical Engineering,GM,15100,Round 2
+NMAM Institute of Technology Nitte,Mechanical Engineering,GM,17900,Round 3
+Manipal Institute of Technology,Computer Science and Engineering,GM,400,Round 1
+Manipal Institute of Technology,Computer Science and Engineering,GM,470,Round 2
+Manipal Institute of Technology,Computer Science and Engineering,GM,560,Round 3
+Manipal Institute of Technology,Computer Science and Engineering,KKR,620,Round 1
+Manipal Institute of Technology,Computer Science and Engineering,KKR,730,Round 2
+Manipal Institute of Technology,Computer Science and Engineering,KKR,860,Round 3
+Manipal Institute of Technology,Electronics and Communication Engineering,GM,960,Round 1
+Manipal Institute of Technology,Electronics and Communication Engineering,GM,1130,Round 2
+Manipal Institute of Technology,Electronics and Communication Engineering,GM,1340,Round 3
+Manipal Institute of Technology,Electronics and Communication Engineering,KKR,1480,Round 1
+Manipal Institute of Technology,Electronics and Communication Engineering,KKR,1750,Round 2
+Manipal Institute of Technology,Electronics and Communication Engineering,KKR,2070,Round 3
+Manipal Institute of Technology,Electrical Engineering,GM,2400,Round 1
+Manipal Institute of Technology,Electrical Engineering,GM,2830,Round 2
+Manipal Institute of Technology,Electrical Engineering,GM,3350,Round 3
+Manipal Institute of Technology,Mechanical Engineering,GM,3600,Round 1
+Manipal Institute of Technology,Mechanical Engineering,GM,4250,Round 2
+Manipal Institute of Technology,Mechanical Engineering,GM,5030,Round 3
+Manipal Institute of Technology,Chemical Engineering,GM,7200,Round 1
+Manipal Institute of Technology,Chemical Engineering,GM,8500,Round 2
+Manipal Institute of Technology,Chemical Engineering,GM,10100,Round 3
+Manipal Institute of Technology,Civil Engineering,GM,8000,Round 1
+Manipal Institute of Technology,Civil Engineering,GM,9440,Round 2
+Manipal Institute of Technology,Civil Engineering,GM,11200,Round 3
+SDM College of Engineering Dharwad,Computer Science and Engineering,GM,4000,Round 1
+SDM College of Engineering Dharwad,Computer Science and Engineering,GM,4720,Round 2
+SDM College of Engineering Dharwad,Computer Science and Engineering,GM,5590,Round 3
+SDM College of Engineering Dharwad,Computer Science and Engineering,KKR,6170,Round 1
+SDM College of Engineering Dharwad,Computer Science and Engineering,KKR,7290,Round 2
+SDM College of Engineering Dharwad,Computer Science and Engineering,KKR,8620,Round 3
+SDM College of Engineering Dharwad,Electronics and Communication Engineering,GM,8000,Round 1
+SDM College of Engineering Dharwad,Electronics and Communication Engineering,GM,9440,Round 2
+SDM College of Engineering Dharwad,Electronics and Communication Engineering,GM,11200,Round 3
+SDM College of Engineering Dharwad,Mechanical Engineering,GM,14400,Round 1
+SDM College of Engineering Dharwad,Mechanical Engineering,GM,17000,Round 2
+SDM College of Engineering Dharwad,Mechanical Engineering,GM,20100,Round 3
+SDM College of Engineering Dharwad,Civil Engineering,GM,17600,Round 1
+SDM College of Engineering Dharwad,Civil Engineering,GM,20800,Round 2
+SDM College of Engineering Dharwad,Civil Engineering,GM,24600,Round 3
+KLE Technological University Hubballi,Computer Science and Engineering,GM,2800,Round 1
+KLE Technological University Hubballi,Computer Science and Engineering,GM,3310,Round 2
+KLE Technological University Hubballi,Computer Science and Engineering,GM,3910,Round 3
+KLE Technological University Hubballi,Computer Science and Engineering,KKR,4330,Round 1
+KLE Technological University Hubballi,Computer Science and Engineering,KKR,5110,Round 2
+KLE Technological University Hubballi,Computer Science and Engineering,KKR,6040,Round 3
+KLE Technological University Hubballi,Electronics and Communication Engineering,GM,6000,Round 1
+KLE Technological University Hubballi,Electronics and Communication Engineering,GM,7080,Round 2
+KLE Technological University Hubballi,Electronics and Communication Engineering,GM,8390,Round 3
+KLE Technological University Hubballi,Mechanical Engineering,GM,11200,Round 1
+KLE Technological University Hubballi,Mechanical Engineering,GM,13200,Round 2
+KLE Technological University Hubballi,Mechanical Engineering,GM,15700,Round 3
+KLE Technological University Hubballi,Civil Engineering,GM,16000,Round 1
+KLE Technological University Hubballi,Civil Engineering,GM,18900,Round 2
+KLE Technological University Hubballi,Civil Engineering,GM,22400,Round 3
+DSCE Bangalore,Computer Science and Engineering,GM,3360,Round 1
+DSCE Bangalore,Computer Science and Engineering,GM,3970,Round 2
+DSCE Bangalore,Computer Science and Engineering,GM,4700,Round 3
+DSCE Bangalore,Computer Science and Engineering,KKR,5190,Round 1
+DSCE Bangalore,Computer Science and Engineering,KKR,6130,Round 2
+DSCE Bangalore,Computer Science and Engineering,KKR,7250,Round 3
+DSCE Bangalore,Electronics and Communication Engineering,GM,7200,Round 1
+DSCE Bangalore,Electronics and Communication Engineering,GM,8500,Round 2
+DSCE Bangalore,Electronics and Communication Engineering,GM,10100,Round 3
+DSCE Bangalore,Mechanical Engineering,GM,12800,Round 1
+DSCE Bangalore,Mechanical Engineering,GM,15100,Round 2
+DSCE Bangalore,Mechanical Engineering,GM,17900,Round 3

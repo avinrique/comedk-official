@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Analytics / Dashboard View
+   LS Predictor — Analytics / Dashboard View
    CSS-only charts, no external libraries.
    ============================================ */
 const Analytics = (() => {

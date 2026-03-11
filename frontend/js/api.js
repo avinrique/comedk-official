@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — API Fetch Wrapper
+   LS Predictor — API Fetch Wrapper
    ============================================ */
 
 /**

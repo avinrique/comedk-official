@@ -1,0 +1,16 @@
+{
+  "name": "ls-predictor",
+  "version": "1.0.0",
+  "description": "LS Predictor — College Admission CRM & Rank Predictor",
+  "scripts": {
+    "start": "npm run backend",
+    "backend": "cd backend && npm start",
+    "backend:dev": "cd backend && npm run dev",
+    "frontend": "cd frontend && python3 -m http.server 8000",
+    "dev": "npx concurrently \"npm run backend:dev\" \"npm run frontend\"",
+    "seed": "cd backend && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Pipeline / Kanban View
+   LS Predictor — Pipeline / Kanban View
    HTML5 Drag & Drop — no libraries.
    ============================================ */
 const Pipeline = (() => {

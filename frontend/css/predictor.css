@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Predictor Page Styles
+   LS Predictor — Predictor Page Styles
    Premium Modern Redesign
    ============================================ */
 
@@ -194,6 +194,17 @@
   font-size: 0.75rem;
   color: var(--text-muted);
   line-height: 1.4;
+}
+
+/* --- Disabled Exam Card --- */
+.exam-option-disabled label {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.exam-option-disabled .exam-option-icon {
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%) !important;
 }
 
 /* --- Input Form Section --- */

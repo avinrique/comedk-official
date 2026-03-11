@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Leads Management View
+   LS Predictor — Leads Management View
    ============================================ */
 const Leads = (() => {
   let currentPage  = 1;

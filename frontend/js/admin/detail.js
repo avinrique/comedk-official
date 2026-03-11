@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Lead Detail Modal
+   LS Predictor — Lead Detail Modal
    Tabs: Info, Activity/Notes, Reminders
    ============================================ */
 const LeadDetail = (() => {

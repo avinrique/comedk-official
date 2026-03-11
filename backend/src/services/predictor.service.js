@@ -41,6 +41,7 @@ const normaliseComedk = (row) => ({
   category: row['Category'],
   cutoffRank: Number(row['Closing Rank']),
   exam: 'COMEDK',
+  round: row['Round'] || '',
 });
 
 /**
@@ -118,6 +119,9 @@ const EXAM_ID_TO_NAME = {
   'vit': 'VIT',
   'viteee': 'VIT',
 };
+
+// Exams that are temporarily disabled (shown greyed out in UI)
+const DISABLED_EXAMS = new Set(['NEET']);
 
 const EXAM_NAME_TO_ID = Object.fromEntries(
   Object.entries(EXAM_ID_TO_NAME).map(([id, name]) => [name, id])
@@ -219,9 +223,10 @@ const CHANCE_ORDER = { Safe: 0, Good: 1, Reach: 2 };
  * @param {number}  params.inputValue – the numeric value
  * @param {string}  [params.category] – category filter ("__all__" = no filter)
  * @param {string}  [params.branch]   – branch filter  ("__all__" = no filter)
+ * @param {string}  [params.round]    – round filter for COMEDK ("__all__" = no filter)
  * @returns {{ predictedRank, rankRange, colleges[], totalMatches }}
  */
-const predict = ({ exam, inputType, inputValue, category, branch }) => {
+const predict = ({ exam, inputType, inputValue, category, branch, round }) => {
   // --- Validate ---
   if (!exam) {
     const err = new Error('exam is required');
@@ -279,6 +284,10 @@ const predict = ({ exam, inputType, inputValue, category, branch }) => {
     filtered = filtered.filter((c) => c.branch === branch);
   }
 
+  if (round && round !== '__all__') {
+    filtered = filtered.filter((c) => !c.round || c.round === round);
+  }
+
   // --- Compute chances ---
   const colleges = [];
   for (const row of filtered) {
@@ -331,14 +340,27 @@ const getExamMetadata = () => {
       ? Math.max(...examCutoff.marksToRank.map((p) => p.marks))
       : null;
 
-    exams.push({
+    // Collect available rounds (relevant for COMEDK)
+    const rounds = [...new Set(rows.map((r) => r.round).filter(Boolean))].sort();
+
+    const examEntry = {
       id,
       name,
       inputTypes: ['marks', 'rank'],
       maxMarks,
       categories,
       branches,
-    });
+    };
+
+    if (rounds.length > 0) {
+      examEntry.rounds = rounds;
+    }
+
+    if (DISABLED_EXAMS.has(name)) {
+      examEntry.disabled = true;
+    }
+
+    exams.push(examEntry);
   }
 
   return exams;

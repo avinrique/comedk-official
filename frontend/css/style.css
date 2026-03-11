@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Master Stylesheet
+   LS Predictor — Master Stylesheet
    Premium Design System + All Page Styles
    ============================================ */
 
@@ -1660,7 +1660,7 @@ p {
    ============================================ */
 .floating-buttons {
   position: fixed;
-  bottom: 90px;
+  bottom: 24px;
   right: 20px;
   z-index: 900;
   display: flex;
@@ -2530,7 +2530,7 @@ select.form-control {
 
   /* Floating buttons adjust for bottom bar */
   .floating-buttons {
-    bottom: 80px;
+    bottom: 20px;
     right: 16px;
   }
 

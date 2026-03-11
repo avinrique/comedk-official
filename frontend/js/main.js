@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Main JavaScript
+   LS Predictor — Main JavaScript
    Handles: navigation, scroll effects, reveal
    animations, testimonial slider, FAQ accordion,
    stats counter, mobile bottom bar.

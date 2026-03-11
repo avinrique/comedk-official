@@ -1,16 +1,35 @@
-name,branch,category,cutoff_rank,year
-VIT Vellore,Computer Science and Engineering,General,3000,2024
-VIT Vellore,Electronics and Communication Engineering,General,12000,2024
-VIT Vellore,Mechanical Engineering,General,35000,2024
-VIT Vellore,Electrical and Electronics Engineering,General,20000,2024
-VIT Vellore,Information Technology,General,6000,2024
-VIT Vellore,Biotechnology,General,40000,2024
-VIT Vellore,Chemical Engineering,General,50000,2024
-VIT Chennai,Computer Science and Engineering,General,15000,2024
-VIT Chennai,Electronics and Communication Engineering,General,30000,2024
-VIT Chennai,Information Technology,General,22000,2024
-VIT Chennai,Mechanical Engineering,General,55000,2024
-VIT Bhopal,Computer Science and Engineering,General,40000,2024
-VIT Bhopal,Electronics and Communication Engineering,General,60000,2024
-VIT AP (Amaravati),Computer Science and Engineering,General,25000,2024
-VIT AP (Amaravati),Electronics and Communication Engineering,General,45000,2024
+name,branch,category,cutoff_rank
+VIT Vellore,Computer Science and Engineering,General,950
+VIT Vellore,Computer Science and Engineering (Specialisation),General,2800
+VIT Vellore,CS (Bioinformatics),General,7500
+VIT Vellore,Information Technology,General,6000
+VIT Vellore,Electronics and Communication Engineering,General,12000
+VIT Vellore,Biomedical Engineering,General,13000
+VIT Vellore,Biotechnology,General,13500
+VIT Vellore,Civil Engineering,General,14300
+VIT Vellore,Electrical and Electronics Engineering,General,16000
+VIT Vellore,Electronics and Instrumentation Engineering,General,16500
+VIT Vellore,Mechanical Engineering,General,20000
+VIT Vellore,Chemical Engineering,General,25000
+VIT Vellore,Production and Industrial Engineering,General,30000
+VIT Chennai,Computer Science and Engineering,General,8000
+VIT Chennai,Computer Science and Engineering (Specialisation),General,11500
+VIT Chennai,Information Technology,General,22000
+VIT Chennai,Electronics and Communication Engineering,General,30000
+VIT Chennai,Civil Engineering,General,29000
+VIT Chennai,Electrical and Electronics Engineering,General,39000
+VIT Chennai,Electronics and Computer Engineering,General,42000
+VIT Chennai,Mechanical Engineering,General,39500
+VIT Chennai,Fashion Technology,General,55000
+VIT AP (Amaravati),Computer Science and Engineering,General,25000
+VIT AP (Amaravati),Computer Science and Engineering (Specialisation),General,35000
+VIT AP (Amaravati),Electronics and Communication Engineering,General,45000
+VIT AP (Amaravati),Mechanical Engineering,General,55000
+VIT AP (Amaravati),Electrical and Electronics Engineering,General,50000
+VIT AP (Amaravati),Civil Engineering,General,60000
+VIT Bhopal,Computer Science and Engineering,General,40000
+VIT Bhopal,Computer Science and Engineering (Specialisation),General,50000
+VIT Bhopal,Electronics and Communication Engineering,General,60000
+VIT Bhopal,Mechanical Engineering,General,70000
+VIT Bhopal,Electrical and Electronics Engineering,General,65000
+VIT Bhopal,Civil Engineering,General,80000

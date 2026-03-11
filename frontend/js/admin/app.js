@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — SPA Router + Inline Views
+   LS Predictor — SPA Router + Inline Views
    (Reminders & Team management)
    ============================================ */
 const App = (() => {
@@ -516,83 +516,162 @@ const App = (() => {
 
     async function render() {
       const content = document.getElementById('content');
+      const isAdmin = Auth.isAdmin();
 
-      if (!Auth.isAdmin()) {
-        content.innerHTML = '<div class="chart-card" style="text-align:center;padding:48px;color:var(--danger);">Access denied. Admin privileges required.</div>';
-        return;
+      let settingsHTML = '';
+
+      // Admin-only predictor settings
+      if (isAdmin) {
+        content.innerHTML = '<div style="text-align:center;padding:48px;color:var(--text-muted);">Loading settings...</div>';
+
+        try {
+          const res = await get('/settings');
+          const data = res.data || res;
+          const settings = data.settings || (Array.isArray(data) ? data : []);
+
+          const leadGate = settings.find(s => s.key === 'predictor_lead_gate');
+          const leadGateValue = leadGate ? leadGate.value : true;
+
+          settingsHTML += `
+            <div class="chart-card">
+              <div class="chart-card-header"><h3>Predictor Settings</h3></div>
+              <div style="padding:4px 0;">
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border-light, #eee);">
+                  <div>
+                    <h4 style="font-size:0.9375rem;font-weight:600;color:var(--text-dark);margin-bottom:4px;">Lead Capture Gate</h4>
+                    <p style="font-size:0.8125rem;color:var(--text-muted);max-width:480px;">
+                      When enabled, users must enter their name, phone, and email before viewing prediction results. This captures leads from the predictor tool.
+                    </p>
+                  </div>
+                  <label class="toggle-switch" style="position:relative;display:inline-block;width:52px;height:28px;flex-shrink:0;">
+                    <input type="checkbox" id="setting-lead-gate" ${leadGateValue ? 'checked' : ''} style="opacity:0;width:0;height:0;">
+                    <span class="toggle-slider" style="position:absolute;cursor:pointer;inset:0;background:${leadGateValue ? 'var(--primary, #0ea960)' : '#ccc'};border-radius:28px;transition:0.3s;">
+                      <span style="position:absolute;content:'';height:22px;width:22px;left:${leadGateValue ? '27px' : '3px'};bottom:3px;background:#fff;border-radius:50%;transition:0.3s;box-shadow:0 1px 4px rgba(0,0,0,0.15);"></span>
+                    </span>
+                  </label>
+                </div>
+                <p id="settings-status" style="font-size:0.8125rem;margin-top:12px;display:none;"></p>
+              </div>
+            </div>
+          `;
+        } catch (err) {
+          settingsHTML += `<div class="chart-card" style="text-align:center;padding:48px;color:var(--danger);">
+            Failed to load settings.<br>
+            <span style="font-size:0.8125rem;color:var(--text-muted);">${_esc(err.message)}</span>
+          </div>`;
+        }
       }
 
-      content.innerHTML = '<div style="text-align:center;padding:48px;color:var(--text-muted);">Loading settings...</div>';
-
-      try {
-        const res = await get('/settings');
-        const data = res.data || res;
-        const settings = data.settings || (Array.isArray(data) ? data : []);
-
-        // Find lead gate setting
-        const leadGate = settings.find(s => s.key === 'predictor_lead_gate');
-        const leadGateValue = leadGate ? leadGate.value : true;
-
-        content.innerHTML = `
-          <div class="chart-card">
-            <div class="chart-card-header"><h3>Predictor Settings</h3></div>
-            <div style="padding:4px 0;">
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border-light, #eee);">
-                <div>
-                  <h4 style="font-size:0.9375rem;font-weight:600;color:var(--text-dark);margin-bottom:4px;">Lead Capture Gate</h4>
-                  <p style="font-size:0.8125rem;color:var(--text-muted);max-width:480px;">
-                    When enabled, users must enter their name, phone, and email before viewing prediction results. This captures leads from the predictor tool.
-                  </p>
-                </div>
-                <label class="toggle-switch" style="position:relative;display:inline-block;width:52px;height:28px;flex-shrink:0;">
-                  <input type="checkbox" id="setting-lead-gate" ${leadGateValue ? 'checked' : ''} style="opacity:0;width:0;height:0;">
-                  <span class="toggle-slider" style="position:absolute;cursor:pointer;inset:0;background:${leadGateValue ? 'var(--primary, #0ea960)' : '#ccc'};border-radius:28px;transition:0.3s;">
-                    <span style="position:absolute;content:'';height:22px;width:22px;left:${leadGateValue ? '27px' : '3px'};bottom:3px;background:#fff;border-radius:50%;transition:0.3s;box-shadow:0 1px 4px rgba(0,0,0,0.15);"></span>
-                  </span>
-                </label>
-              </div>
-              <p id="settings-status" style="font-size:0.8125rem;margin-top:12px;display:none;"></p>
+      // Change password (available to all users)
+      settingsHTML += `
+        <div class="chart-card" style="margin-top:24px;">
+          <div class="chart-card-header"><h3>Change Password</h3></div>
+          <form id="change-password-form" class="admin-form" onsubmit="return false;" style="max-width:400px;">
+            <div class="form-group">
+              <label for="cp-current">Current Password</label>
+              <input type="password" id="cp-current" class="form-control" placeholder="Enter current password" required>
             </div>
-          </div>
-        `;
+            <div class="form-group">
+              <label for="cp-new">New Password</label>
+              <input type="password" id="cp-new" class="form-control" placeholder="Min 6 characters" required>
+            </div>
+            <div class="form-group">
+              <label for="cp-confirm">Confirm New Password</label>
+              <input type="password" id="cp-confirm" class="form-control" placeholder="Re-enter new password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm" id="cp-submit-btn">Update Password</button>
+            <p id="cp-msg" style="font-size:0.8125rem;margin-top:12px;display:none;"></p>
+          </form>
+        </div>
+      `;
 
-        // Bind toggle
+      content.innerHTML = settingsHTML;
+
+      // Bind lead gate toggle (admin only)
+      if (isAdmin) {
         const toggle = document.getElementById('setting-lead-gate');
         const statusEl = document.getElementById('settings-status');
-        toggle.addEventListener('change', async () => {
-          const newVal = toggle.checked;
-          const slider = toggle.nextElementSibling;
-          const dot = slider.querySelector('span');
+        if (toggle) {
+          toggle.addEventListener('change', async () => {
+            const newVal = toggle.checked;
+            const slider = toggle.nextElementSibling;
+            const dot = slider.querySelector('span');
 
-          slider.style.background = newVal ? 'var(--primary, #0ea960)' : '#ccc';
-          dot.style.left = newVal ? '27px' : '3px';
+            slider.style.background = newVal ? 'var(--primary, #0ea960)' : '#ccc';
+            dot.style.left = newVal ? '27px' : '3px';
 
-          try {
-            await apiRequest('/settings/predictor_lead_gate', {
-              method: 'PUT',
-              body: { value: newVal }
-            });
-            statusEl.textContent = 'Setting saved.';
-            statusEl.style.color = 'var(--success, #0ea960)';
-            statusEl.style.display = 'block';
-            setTimeout(() => { statusEl.style.display = 'none'; }, 2000);
-          } catch (err) {
-            statusEl.textContent = 'Failed to save: ' + (err.message || 'Unknown error');
-            statusEl.style.color = 'var(--danger, #e74c3c)';
-            statusEl.style.display = 'block';
-            // Revert toggle
-            toggle.checked = !newVal;
-            slider.style.background = !newVal ? 'var(--primary, #0ea960)' : '#ccc';
-            dot.style.left = !newVal ? '27px' : '3px';
-          }
-        });
-
-      } catch (err) {
-        content.innerHTML = `<div class="chart-card" style="text-align:center;padding:48px;color:var(--danger);">
-          Failed to load settings.<br>
-          <span style="font-size:0.8125rem;color:var(--text-muted);">${_esc(err.message)}</span>
-        </div>`;
+            try {
+              await apiRequest('/settings/predictor_lead_gate', {
+                method: 'PUT',
+                body: { value: newVal }
+              });
+              statusEl.textContent = 'Setting saved.';
+              statusEl.style.color = 'var(--success, #0ea960)';
+              statusEl.style.display = 'block';
+              setTimeout(() => { statusEl.style.display = 'none'; }, 2000);
+            } catch (err) {
+              statusEl.textContent = 'Failed to save: ' + (err.message || 'Unknown error');
+              statusEl.style.color = 'var(--danger, #e74c3c)';
+              statusEl.style.display = 'block';
+              toggle.checked = !newVal;
+              slider.style.background = !newVal ? 'var(--primary, #0ea960)' : '#ccc';
+              dot.style.left = !newVal ? '27px' : '3px';
+            }
+          });
+        }
       }
+
+      // Bind change password form
+      const cpForm = document.getElementById('change-password-form');
+      cpForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('cp-submit-btn');
+        const msg = document.getElementById('cp-msg');
+        const currentPw = document.getElementById('cp-current').value;
+        const newPw = document.getElementById('cp-new').value;
+        const confirmPw = document.getElementById('cp-confirm').value;
+
+        msg.style.display = 'none';
+
+        if (!currentPw || !newPw || !confirmPw) {
+          msg.textContent = 'All fields are required.';
+          msg.style.color = 'var(--danger)';
+          msg.style.display = 'block';
+          return;
+        }
+
+        if (newPw.length < 6) {
+          msg.textContent = 'New password must be at least 6 characters.';
+          msg.style.color = 'var(--danger)';
+          msg.style.display = 'block';
+          return;
+        }
+
+        if (newPw !== confirmPw) {
+          msg.textContent = 'New passwords do not match.';
+          msg.style.color = 'var(--danger)';
+          msg.style.display = 'block';
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Updating...';
+
+        try {
+          await post('/auth/change-password', { currentPassword: currentPw, newPassword: newPw });
+          msg.textContent = 'Password updated successfully!';
+          msg.style.color = 'var(--success, #0ea960)';
+          msg.style.display = 'block';
+          cpForm.reset();
+        } catch (err) {
+          msg.textContent = err.message || 'Failed to update password.';
+          msg.style.color = 'var(--danger)';
+          msg.style.display = 'block';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Update Password';
+        }
+      });
     }
 
     return { render };

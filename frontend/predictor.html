@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="College Predictor — Find colleges matching your score across JEE Main, NEET, COMEDK, SRM, and VIT. AI-powered predictions by COMEDK Official.">
+  <meta name="description" content="College Predictor — Find colleges matching your score across JEE Main, NEET, COMEDK, SRM, and VIT. AI-powered predictions by LS Predictor.">
   <meta name="keywords" content="college predictor, JEE predictor, NEET predictor, COMEDK, SRM, VIT, admission guidance, rank predictor">
-  <meta name="author" content="COMEDK Official">
+  <meta name="author" content="LS Predictor">
   <meta name="theme-color" content="#0ea960">
-  <title>College Predictor — COMEDK Official</title>
+  <title>College Predictor — LS Predictor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
           <path d="M16 6L24 24H8L16 6Z" fill="white" opacity="0.9"/>
           <circle cx="16" cy="20" r="3" fill="white"/>
         </svg>
-        <span>COMEDK<span class="logo-highlight">Official</span></span>
+        <span>LS<span class="logo-highlight">Predictor</span></span>
       </a>
 
       <nav class="nav-links" id="navLinks">
@@ -131,6 +131,14 @@
         <select id="branchFilter" class="form-control">
           <option value="">All Branches</option>
         </select>
+        <div class="filter-divider" id="roundFilterDivider" style="display:none;"></div>
+        <div id="roundFilterGroup" style="display:none;">
+          <label for="roundFilter">Counselling Round:</label>
+          <select id="roundFilter" class="form-control">
+            <option value="">All Rounds</option>
+          </select>
+          <small style="color:var(--text-muted); font-size:0.8125rem; margin-top:4px; display:block;">Earlier rounds are more competitive. Later rounds have more seat availability.</small>
+        </div>
       </div>
 
       <!-- Predict Button -->
@@ -160,7 +168,7 @@
               </div>
               <div class="form-group">
                 <label for="gatePhone">Phone Number <span style="color:var(--accent);">*</span></label>
-                <input type="tel" id="gatePhone" class="form-control" placeholder="+91 98765 43210" required>
+                <input type="tel" id="gatePhone" class="form-control" placeholder="+91 84820 67016" required>
                 <span class="form-error">Please enter a valid phone number (10+ digits)</span>
               </div>
               <div class="form-group">
@@ -307,7 +315,7 @@
               </div>
               <div class="form-group">
                 <label for="leadPhone">Phone Number *</label>
-                <input type="tel" id="leadPhone" name="phone" class="form-control" placeholder="+91 98765 43210" required>
+                <input type="tel" id="leadPhone" name="phone" class="form-control" placeholder="+91 84820 67016" required>
                 <span class="form-error">Please enter a valid phone number</span>
               </div>
               <div class="form-group">
@@ -332,7 +340,7 @@
 
   <!-- ========== SIMPLE FOOTER ========== -->
   <footer style="text-align:center; padding:24px 16px; font-size:0.8125rem; color:var(--text-muted, #7a7a96); border-top:1px solid var(--border-light, #f0f0f5);">
-    &copy; 2026 COMEDK Official &middot; <a href="index.html" style="color:var(--primary, #0ea960);">Home</a> &middot; <a href="contact.html" style="color:var(--primary, #0ea960);">Contact</a>
+    &copy; 2026 LS Predictor &middot; <a href="index.html" style="color:var(--primary, #0ea960);">Home</a> &middot; <a href="contact.html" style="color:var(--primary, #0ea960);">Contact</a>
   </footer>
 
   <script src="js/config.js"></script>

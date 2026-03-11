@@ -1,5 +1,5 @@
 /* ============================================
-   COMEDK Official — Auth Module
+   LS Predictor — Auth Module
    ============================================ */
 const Auth = (() => {
   const TOKEN_KEY = 'auth_token';
