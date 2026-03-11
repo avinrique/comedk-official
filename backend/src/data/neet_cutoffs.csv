@@ -1,0 +1,102 @@
+College,Course,Category,State,Closing Rank
+AIIMS New Delhi,MBBS,General,Delhi,50
+AIIMS New Delhi,MBBS,OBC,Delhi,25
+AIIMS New Delhi,MBBS,SC,Delhi,15
+AIIMS New Delhi,MBBS,ST,Delhi,8
+AIIMS New Delhi,MBBS,EWS,Delhi,30
+AIIMS Jodhpur,MBBS,General,Rajasthan,250
+AIIMS Jodhpur,MBBS,OBC,Rajasthan,120
+AIIMS Jodhpur,MBBS,SC,Rajasthan,65
+AIIMS Jodhpur,MBBS,ST,Rajasthan,35
+AIIMS Bhopal,MBBS,General,Madhya Pradesh,350
+AIIMS Bhopal,MBBS,OBC,Madhya Pradesh,170
+AIIMS Bhopal,MBBS,SC,Madhya Pradesh,90
+AIIMS Bhubaneswar,MBBS,General,Odisha,300
+AIIMS Bhubaneswar,MBBS,OBC,Odisha,145
+AIIMS Bhubaneswar,MBBS,SC,Odisha,80
+AIIMS Patna,MBBS,General,Bihar,400
+AIIMS Patna,MBBS,OBC,Bihar,200
+AIIMS Patna,MBBS,SC,Bihar,110
+AIIMS Rishikesh,MBBS,General,Uttarakhand,450
+AIIMS Rishikesh,MBBS,OBC,Uttarakhand,220
+AIIMS Raipur,MBBS,General,Chhattisgarh,500
+AIIMS Raipur,MBBS,OBC,Chhattisgarh,250
+AIIMS Nagpur,MBBS,General,Maharashtra,550
+AIIMS Nagpur,MBBS,OBC,Maharashtra,270
+AIIMS Mangalagiri,MBBS,General,Andhra Pradesh,600
+AIIMS Mangalagiri,MBBS,OBC,Andhra Pradesh,300
+JIPMER Puducherry,MBBS,General,Puducherry,200
+JIPMER Puducherry,MBBS,OBC,Puducherry,100
+JIPMER Puducherry,MBBS,SC,Puducherry,50
+JIPMER Puducherry,MBBS,ST,Puducherry,28
+Maulana Azad Medical College Delhi,MBBS,General,Delhi,80
+Maulana Azad Medical College Delhi,MBBS,OBC,Delhi,40
+Maulana Azad Medical College Delhi,MBBS,SC,Delhi,22
+Maulana Azad Medical College Delhi,MBBS,EWS,Delhi,48
+UCMS Delhi,MBBS,General,Delhi,150
+UCMS Delhi,MBBS,OBC,Delhi,75
+UCMS Delhi,MBBS,SC,Delhi,40
+Lady Hardinge Medical College Delhi,MBBS,General,Delhi,180
+Lady Hardinge Medical College Delhi,MBBS,OBC,Delhi,90
+Lady Hardinge Medical College Delhi,MBBS,SC,Delhi,48
+King George Medical University Lucknow,MBBS,General,Uttar Pradesh,2500
+King George Medical University Lucknow,MBBS,OBC,Uttar Pradesh,1200
+King George Medical University Lucknow,MBBS,SC,Uttar Pradesh,650
+Grant Medical College Mumbai,MBBS,General,Maharashtra,3000
+Grant Medical College Mumbai,MBBS,OBC,Maharashtra,1500
+Grant Medical College Mumbai,MBBS,SC,Maharashtra,800
+Seth GS Medical College Mumbai,MBBS,General,Maharashtra,1200
+Seth GS Medical College Mumbai,MBBS,OBC,Maharashtra,600
+Seth GS Medical College Mumbai,MBBS,SC,Maharashtra,320
+BJ Medical College Pune,MBBS,General,Maharashtra,3500
+BJ Medical College Pune,MBBS,OBC,Maharashtra,1750
+BJ Medical College Pune,MBBS,SC,Maharashtra,920
+Bangalore Medical College,MBBS,General,Karnataka,5000
+Bangalore Medical College,MBBS,OBC,Karnataka,2500
+Bangalore Medical College,MBBS,SC,Karnataka,1300
+Bangalore Medical College,MBBS,ST,Karnataka,700
+Madras Medical College,MBBS,General,Tamil Nadu,4500
+Madras Medical College,MBBS,OBC,Tamil Nadu,2200
+Madras Medical College,MBBS,SC,Tamil Nadu,1150
+Stanley Medical College Chennai,MBBS,General,Tamil Nadu,6000
+Stanley Medical College Chennai,MBBS,OBC,Tamil Nadu,3000
+Osmania Medical College Hyderabad,MBBS,General,Telangana,7000
+Osmania Medical College Hyderabad,MBBS,OBC,Telangana,3500
+Gandhi Medical College Hyderabad,MBBS,General,Telangana,8000
+Gandhi Medical College Hyderabad,MBBS,OBC,Telangana,4000
+Government Medical College Thiruvananthapuram,MBBS,General,Kerala,9000
+Government Medical College Thiruvananthapuram,MBBS,OBC,Kerala,4500
+Government Medical College Kottayam,MBBS,General,Kerala,12000
+Government Medical College Kottayam,MBBS,OBC,Kerala,6000
+Government Medical College Kozhikode,MBBS,General,Kerala,10000
+Government Medical College Kozhikode,MBBS,OBC,Kerala,5000
+Calcutta Medical College,MBBS,General,West Bengal,15000
+Calcutta Medical College,MBBS,OBC,West Bengal,7500
+Calcutta Medical College,MBBS,SC,West Bengal,4000
+SMS Medical College Jaipur,MBBS,General,Rajasthan,8000
+SMS Medical College Jaipur,MBBS,OBC,Rajasthan,4000
+SMS Medical College Jaipur,MBBS,SC,Rajasthan,2100
+RG Kar Medical College Kolkata,MBBS,General,West Bengal,18000
+RG Kar Medical College Kolkata,MBBS,OBC,West Bengal,9000
+Government Medical College Nagpur,MBBS,General,Maharashtra,20000
+Government Medical College Nagpur,MBBS,OBC,Maharashtra,10000
+Government Medical College Chandigarh,MBBS,General,Chandigarh,6000
+Government Medical College Chandigarh,MBBS,OBC,Chandigarh,3000
+Government Medical College Patiala,MBBS,General,Punjab,25000
+Government Medical College Patiala,MBBS,OBC,Punjab,12500
+Government Medical College Amritsar,MBBS,General,Punjab,28000
+Government Medical College Amritsar,MBBS,OBC,Punjab,14000
+IGMC Shimla,MBBS,General,Himachal Pradesh,22000
+IGMC Shimla,MBBS,OBC,Himachal Pradesh,11000
+Pt BD Sharma PGIMS Rohtak,MBBS,General,Haryana,16000
+Pt BD Sharma PGIMS Rohtak,MBBS,OBC,Haryana,8000
+GMCH Chandigarh,MBBS,General,Chandigarh,35000
+GMCH Chandigarh,MBBS,OBC,Chandigarh,17500
+GMC Aurangabad,MBBS,General,Maharashtra,40000
+GMC Aurangabad,MBBS,OBC,Maharashtra,20000
+Government Medical College Srinagar,MBBS,General,J&K,45000
+Government Medical College Srinagar,MBBS,OBC,J&K,22500
+Government Medical College Surat,MBBS,General,Gujarat,30000
+Government Medical College Surat,MBBS,OBC,Gujarat,15000
+BRD Medical College Gorakhpur,MBBS,General,Uttar Pradesh,50000
+BRD Medical College Gorakhpur,MBBS,OBC,Uttar Pradesh,25000

@@ -1,0 +1,119 @@
+{
+  "JEE Main": {
+    "marksToRank": [
+      {"marks": 300, "rank": 1},
+      {"marks": 290, "rank": 50},
+      {"marks": 280, "rank": 150},
+      {"marks": 270, "rank": 350},
+      {"marks": 260, "rank": 700},
+      {"marks": 250, "rank": 1200},
+      {"marks": 240, "rank": 2000},
+      {"marks": 230, "rank": 3200},
+      {"marks": 220, "rank": 4800},
+      {"marks": 210, "rank": 7000},
+      {"marks": 200, "rank": 10000},
+      {"marks": 190, "rank": 14000},
+      {"marks": 180, "rank": 19000},
+      {"marks": 170, "rank": 25000},
+      {"marks": 160, "rank": 33000},
+      {"marks": 150, "rank": 42000},
+      {"marks": 140, "rank": 55000},
+      {"marks": 130, "rank": 70000},
+      {"marks": 120, "rank": 90000},
+      {"marks": 110, "rank": 115000},
+      {"marks": 100, "rank": 150000},
+      {"marks": 90, "rank": 200000},
+      {"marks": 80, "rank": 280000},
+      {"marks": 70, "rank": 400000},
+      {"marks": 60, "rank": 550000},
+      {"marks": 50, "rank": 750000},
+      {"marks": 40, "rank": 900000}
+    ]
+  },
+  "NEET": {
+    "marksToRank": [
+      {"marks": 720, "rank": 1},
+      {"marks": 710, "rank": 10},
+      {"marks": 700, "rank": 50},
+      {"marks": 690, "rank": 150},
+      {"marks": 680, "rank": 400},
+      {"marks": 670, "rank": 800},
+      {"marks": 660, "rank": 1500},
+      {"marks": 650, "rank": 3000},
+      {"marks": 640, "rank": 5000},
+      {"marks": 630, "rank": 8000},
+      {"marks": 620, "rank": 12000},
+      {"marks": 610, "rank": 17000},
+      {"marks": 600, "rank": 23000},
+      {"marks": 580, "rank": 35000},
+      {"marks": 560, "rank": 50000},
+      {"marks": 540, "rank": 70000},
+      {"marks": 520, "rank": 95000},
+      {"marks": 500, "rank": 130000},
+      {"marks": 480, "rank": 175000},
+      {"marks": 460, "rank": 230000},
+      {"marks": 440, "rank": 300000},
+      {"marks": 420, "rank": 400000},
+      {"marks": 400, "rank": 520000},
+      {"marks": 380, "rank": 650000},
+      {"marks": 360, "rank": 800000}
+    ]
+  },
+  "COMEDK": {
+    "marksToRank": [
+      {"marks": 180, "rank": 1},
+      {"marks": 170, "rank": 100},
+      {"marks": 160, "rank": 500},
+      {"marks": 150, "rank": 1500},
+      {"marks": 140, "rank": 3500},
+      {"marks": 130, "rank": 7000},
+      {"marks": 120, "rank": 12000},
+      {"marks": 110, "rank": 20000},
+      {"marks": 100, "rank": 30000},
+      {"marks": 90, "rank": 42000},
+      {"marks": 80, "rank": 55000},
+      {"marks": 70, "rank": 68000},
+      {"marks": 60, "rank": 80000}
+    ]
+  },
+  "SRM": {
+    "marksToRank": [
+      {"marks": 180, "rank": 1},
+      {"marks": 170, "rank": 500},
+      {"marks": 160, "rank": 2000},
+      {"marks": 150, "rank": 5000},
+      {"marks": 140, "rank": 10000},
+      {"marks": 130, "rank": 20000},
+      {"marks": 120, "rank": 35000},
+      {"marks": 110, "rank": 50000},
+      {"marks": 100, "rank": 70000},
+      {"marks": 90, "rank": 90000},
+      {"marks": 80, "rank": 110000},
+      {"marks": 70, "rank": 130000},
+      {"marks": 60, "rank": 150000},
+      {"marks": 50, "rank": 170000},
+      {"marks": 0, "rank": 200000}
+    ],
+    "maxMarks": 180,
+    "marksStep": 1
+  },
+  "VIT": {
+    "marksToRank": [
+      {"marks": 120, "rank": 1},
+      {"marks": 110, "rank": 500},
+      {"marks": 100, "rank": 2000},
+      {"marks": 90, "rank": 5000},
+      {"marks": 80, "rank": 10000},
+      {"marks": 70, "rank": 20000},
+      {"marks": 60, "rank": 35000},
+      {"marks": 50, "rank": 50000},
+      {"marks": 40, "rank": 70000},
+      {"marks": 30, "rank": 90000},
+      {"marks": 20, "rank": 110000},
+      {"marks": 10, "rank": 150000},
+      {"marks": 0, "rank": 200000}
+    ],
+    "maxMarks": 120,
+    "marksStep": 1
+  }
+}

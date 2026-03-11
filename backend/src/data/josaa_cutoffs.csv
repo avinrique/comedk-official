@@ -1,0 +1,210 @@
+Institute,Program,Quota,Category,Gender,Opening Rank,Closing Rank,Exam
+IIT Bombay,Computer Science and Engineering,AI,General,Gender-Neutral,1,68,JEE Advanced
+IIT Bombay,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,8,42,JEE Advanced
+IIT Bombay,Computer Science and Engineering,AI,SC,Gender-Neutral,1,18,JEE Advanced
+IIT Bombay,Computer Science and Engineering,AI,ST,Gender-Neutral,1,12,JEE Advanced
+IIT Bombay,Computer Science and Engineering,AI,EWS,Gender-Neutral,6,38,JEE Advanced
+IIT Bombay,Electrical Engineering,AI,General,Gender-Neutral,69,198,JEE Advanced
+IIT Bombay,Electrical Engineering,AI,OBC-NCL,Gender-Neutral,28,89,JEE Advanced
+IIT Bombay,Electrical Engineering,AI,SC,Gender-Neutral,10,52,JEE Advanced
+IIT Bombay,Electrical Engineering,AI,ST,Gender-Neutral,5,32,JEE Advanced
+IIT Bombay,Electrical Engineering,AI,EWS,Gender-Neutral,25,78,JEE Advanced
+IIT Bombay,Mechanical Engineering,AI,General,Gender-Neutral,199,680,JEE Advanced
+IIT Bombay,Mechanical Engineering,AI,OBC-NCL,Gender-Neutral,75,290,JEE Advanced
+IIT Bombay,Mechanical Engineering,AI,SC,Gender-Neutral,30,120,JEE Advanced
+IIT Bombay,Mechanical Engineering,AI,ST,Gender-Neutral,15,78,JEE Advanced
+IIT Bombay,Electronics and Communication Engineering,AI,General,Gender-Neutral,70,210,JEE Advanced
+IIT Bombay,Electronics and Communication Engineering,AI,OBC-NCL,Gender-Neutral,30,95,JEE Advanced
+IIT Bombay,Chemical Engineering,AI,General,Gender-Neutral,700,1500,JEE Advanced
+IIT Bombay,Chemical Engineering,AI,OBC-NCL,Gender-Neutral,280,620,JEE Advanced
+IIT Bombay,Civil Engineering,AI,General,Gender-Neutral,1200,2600,JEE Advanced
+IIT Bombay,Civil Engineering,AI,OBC-NCL,Gender-Neutral,500,1100,JEE Advanced
+IIT Delhi,Computer Science and Engineering,AI,General,Gender-Neutral,42,96,JEE Advanced
+IIT Delhi,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,12,52,JEE Advanced
+IIT Delhi,Computer Science and Engineering,AI,SC,Gender-Neutral,3,22,JEE Advanced
+IIT Delhi,Computer Science and Engineering,AI,ST,Gender-Neutral,2,15,JEE Advanced
+IIT Delhi,Computer Science and Engineering,AI,EWS,Gender-Neutral,10,48,JEE Advanced
+IIT Delhi,Electrical Engineering,AI,General,Gender-Neutral,97,280,JEE Advanced
+IIT Delhi,Electrical Engineering,AI,OBC-NCL,Gender-Neutral,40,120,JEE Advanced
+IIT Delhi,Electrical Engineering,AI,SC,Gender-Neutral,15,65,JEE Advanced
+IIT Delhi,Electronics and Communication Engineering,AI,General,Gender-Neutral,100,310,JEE Advanced
+IIT Delhi,Electronics and Communication Engineering,AI,OBC-NCL,Gender-Neutral,42,130,JEE Advanced
+IIT Delhi,Mechanical Engineering,AI,General,Gender-Neutral,310,850,JEE Advanced
+IIT Delhi,Mechanical Engineering,AI,OBC-NCL,Gender-Neutral,120,380,JEE Advanced
+IIT Delhi,Chemical Engineering,AI,General,Gender-Neutral,1100,2200,JEE Advanced
+IIT Delhi,Civil Engineering,AI,General,Gender-Neutral,1500,3200,JEE Advanced
+IIT Madras,Computer Science and Engineering,AI,General,Gender-Neutral,80,130,JEE Advanced
+IIT Madras,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,20,60,JEE Advanced
+IIT Madras,Computer Science and Engineering,AI,SC,Gender-Neutral,5,28,JEE Advanced
+IIT Madras,Computer Science and Engineering,AI,ST,Gender-Neutral,3,18,JEE Advanced
+IIT Madras,Computer Science and Engineering,AI,EWS,Gender-Neutral,15,55,JEE Advanced
+IIT Madras,Electrical Engineering,AI,General,Gender-Neutral,131,350,JEE Advanced
+IIT Madras,Electrical Engineering,AI,OBC-NCL,Gender-Neutral,50,150,JEE Advanced
+IIT Madras,Electronics and Communication Engineering,AI,General,Gender-Neutral,140,380,JEE Advanced
+IIT Madras,Mechanical Engineering,AI,General,Gender-Neutral,380,1000,JEE Advanced
+IIT Madras,Mechanical Engineering,AI,OBC-NCL,Gender-Neutral,160,420,JEE Advanced
+IIT Madras,Chemical Engineering,AI,General,Gender-Neutral,1300,2800,JEE Advanced
+IIT Madras,Civil Engineering,AI,General,Gender-Neutral,1800,3800,JEE Advanced
+IIT Kanpur,Computer Science and Engineering,AI,General,Gender-Neutral,100,196,JEE Advanced
+IIT Kanpur,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,25,85,JEE Advanced
+IIT Kanpur,Computer Science and Engineering,AI,SC,Gender-Neutral,8,38,JEE Advanced
+IIT Kanpur,Computer Science and Engineering,AI,ST,Gender-Neutral,4,22,JEE Advanced
+IIT Kanpur,Computer Science and Engineering,AI,EWS,Gender-Neutral,18,72,JEE Advanced
+IIT Kanpur,Electrical Engineering,AI,General,Gender-Neutral,197,520,JEE Advanced
+IIT Kanpur,Electrical Engineering,AI,OBC-NCL,Gender-Neutral,80,220,JEE Advanced
+IIT Kanpur,Electronics and Communication Engineering,AI,General,Gender-Neutral,200,550,JEE Advanced
+IIT Kanpur,Mechanical Engineering,AI,General,Gender-Neutral,550,1300,JEE Advanced
+IIT Kanpur,Chemical Engineering,AI,General,Gender-Neutral,1500,3200,JEE Advanced
+IIT Kanpur,Civil Engineering,AI,General,Gender-Neutral,2200,4500,JEE Advanced
+IIT Kharagpur,Computer Science and Engineering,AI,General,Gender-Neutral,130,290,JEE Advanced
+IIT Kharagpur,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,35,120,JEE Advanced
+IIT Kharagpur,Computer Science and Engineering,AI,SC,Gender-Neutral,12,55,JEE Advanced
+IIT Kharagpur,Computer Science and Engineering,AI,ST,Gender-Neutral,6,30,JEE Advanced
+IIT Kharagpur,Computer Science and Engineering,AI,EWS,Gender-Neutral,22,98,JEE Advanced
+IIT Kharagpur,Electrical Engineering,AI,General,Gender-Neutral,291,700,JEE Advanced
+IIT Kharagpur,Electrical Engineering,AI,OBC-NCL,Gender-Neutral,110,300,JEE Advanced
+IIT Kharagpur,Electronics and Communication Engineering,AI,General,Gender-Neutral,300,750,JEE Advanced
+IIT Kharagpur,Mechanical Engineering,AI,General,Gender-Neutral,750,1600,JEE Advanced
+IIT Kharagpur,Chemical Engineering,AI,General,Gender-Neutral,2000,4000,JEE Advanced
+IIT Kharagpur,Civil Engineering,AI,General,Gender-Neutral,2800,5500,JEE Advanced
+IIT Roorkee,Computer Science and Engineering,AI,General,Gender-Neutral,220,480,JEE Advanced
+IIT Roorkee,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,55,200,JEE Advanced
+IIT Roorkee,Computer Science and Engineering,AI,SC,Gender-Neutral,18,80,JEE Advanced
+IIT Roorkee,Electrical Engineering,AI,General,Gender-Neutral,500,1100,JEE Advanced
+IIT Roorkee,Electronics and Communication Engineering,AI,General,Gender-Neutral,520,1200,JEE Advanced
+IIT Roorkee,Mechanical Engineering,AI,General,Gender-Neutral,1100,2500,JEE Advanced
+IIT Roorkee,Chemical Engineering,AI,General,Gender-Neutral,2800,5200,JEE Advanced
+IIT Roorkee,Civil Engineering,AI,General,Gender-Neutral,3200,6200,JEE Advanced
+IIT Guwahati,Computer Science and Engineering,AI,General,Gender-Neutral,350,780,JEE Advanced
+IIT Guwahati,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,90,320,JEE Advanced
+IIT Guwahati,Electrical Engineering,AI,General,Gender-Neutral,800,1800,JEE Advanced
+IIT Guwahati,Electronics and Communication Engineering,AI,General,Gender-Neutral,850,1900,JEE Advanced
+IIT Guwahati,Mechanical Engineering,AI,General,Gender-Neutral,1800,3800,JEE Advanced
+IIT Hyderabad,Computer Science and Engineering,AI,General,Gender-Neutral,380,850,JEE Advanced
+IIT Hyderabad,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,100,350,JEE Advanced
+IIT Hyderabad,Electrical Engineering,AI,General,Gender-Neutral,900,2000,JEE Advanced
+IIT Hyderabad,Electronics and Communication Engineering,AI,General,Gender-Neutral,950,2100,JEE Advanced
+IIT Hyderabad,Mechanical Engineering,AI,General,Gender-Neutral,2100,4200,JEE Advanced
+IIT BHU Varanasi,Computer Science and Engineering,AI,General,Gender-Neutral,500,1100,JEE Advanced
+IIT BHU Varanasi,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,130,450,JEE Advanced
+IIT BHU Varanasi,Electrical Engineering,AI,General,Gender-Neutral,1100,2500,JEE Advanced
+IIT BHU Varanasi,Electronics and Communication Engineering,AI,General,Gender-Neutral,1200,2700,JEE Advanced
+IIT BHU Varanasi,Mechanical Engineering,AI,General,Gender-Neutral,2500,5000,JEE Advanced
+IIT BHU Varanasi,Chemical Engineering,AI,General,Gender-Neutral,3800,7200,JEE Advanced
+IIT BHU Varanasi,Civil Engineering,AI,General,Gender-Neutral,4200,8000,JEE Advanced
+IIT Indore,Computer Science and Engineering,AI,General,Gender-Neutral,700,1500,JEE Advanced
+IIT Indore,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,180,620,JEE Advanced
+IIT Indore,Electrical Engineering,AI,General,Gender-Neutral,1500,3200,JEE Advanced
+IIT Indore,Mechanical Engineering,AI,General,Gender-Neutral,3200,6500,JEE Advanced
+IIT (ISM) Dhanbad,Computer Science and Engineering,AI,General,Gender-Neutral,900,2000,JEE Advanced
+IIT (ISM) Dhanbad,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,230,820,JEE Advanced
+IIT (ISM) Dhanbad,Electrical Engineering,AI,General,Gender-Neutral,2000,4200,JEE Advanced
+IIT (ISM) Dhanbad,Electronics and Communication Engineering,AI,General,Gender-Neutral,2100,4500,JEE Advanced
+IIT (ISM) Dhanbad,Mechanical Engineering,AI,General,Gender-Neutral,4200,8200,JEE Advanced
+NIT Trichy,Computer Science and Engineering,HS,General,Gender-Neutral,2500,5800,JEE Main
+NIT Trichy,Computer Science and Engineering,HS,OBC-NCL,Gender-Neutral,1200,3200,JEE Main
+NIT Trichy,Computer Science and Engineering,HS,SC,Gender-Neutral,800,2500,JEE Main
+NIT Trichy,Computer Science and Engineering,OS,General,Gender-Neutral,3200,7500,JEE Main
+NIT Trichy,Computer Science and Engineering,OS,OBC-NCL,Gender-Neutral,1800,4800,JEE Main
+NIT Trichy,Electronics and Communication Engineering,HS,General,Gender-Neutral,4500,9800,JEE Main
+NIT Trichy,Electronics and Communication Engineering,OS,General,Gender-Neutral,5800,12500,JEE Main
+NIT Trichy,Electrical Engineering,HS,General,Gender-Neutral,6000,12000,JEE Main
+NIT Trichy,Electrical Engineering,OS,General,Gender-Neutral,7500,15000,JEE Main
+NIT Trichy,Mechanical Engineering,HS,General,Gender-Neutral,8000,16000,JEE Main
+NIT Trichy,Mechanical Engineering,OS,General,Gender-Neutral,10000,20000,JEE Main
+NIT Trichy,Civil Engineering,HS,General,Gender-Neutral,14000,28000,JEE Main
+NIT Trichy,Chemical Engineering,HS,General,Gender-Neutral,16000,32000,JEE Main
+NIT Surathkal,Computer Science and Engineering,HS,General,Gender-Neutral,2800,6500,JEE Main
+NIT Surathkal,Computer Science and Engineering,OS,General,Gender-Neutral,3500,8200,JEE Main
+NIT Surathkal,Computer Science and Engineering,OS,OBC-NCL,Gender-Neutral,2000,5500,JEE Main
+NIT Surathkal,Electronics and Communication Engineering,HS,General,Gender-Neutral,5000,11000,JEE Main
+NIT Surathkal,Electronics and Communication Engineering,OS,General,Gender-Neutral,6500,14000,JEE Main
+NIT Surathkal,Electrical Engineering,OS,General,Gender-Neutral,8500,17000,JEE Main
+NIT Surathkal,Mechanical Engineering,OS,General,Gender-Neutral,11000,22000,JEE Main
+NIT Surathkal,Chemical Engineering,OS,General,Gender-Neutral,18000,36000,JEE Main
+NIT Surathkal,Civil Engineering,OS,General,Gender-Neutral,16000,32000,JEE Main
+NIT Warangal,Computer Science and Engineering,HS,General,Gender-Neutral,3000,7000,JEE Main
+NIT Warangal,Computer Science and Engineering,OS,General,Gender-Neutral,3800,8800,JEE Main
+NIT Warangal,Computer Science and Engineering,OS,OBC-NCL,Gender-Neutral,2200,5800,JEE Main
+NIT Warangal,Electronics and Communication Engineering,HS,General,Gender-Neutral,5500,12000,JEE Main
+NIT Warangal,Electronics and Communication Engineering,OS,General,Gender-Neutral,7000,15000,JEE Main
+NIT Warangal,Electrical Engineering,OS,General,Gender-Neutral,9000,18000,JEE Main
+NIT Warangal,Mechanical Engineering,OS,General,Gender-Neutral,12000,24000,JEE Main
+NIT Warangal,Civil Engineering,OS,General,Gender-Neutral,18000,35000,JEE Main
+NIT Warangal,Chemical Engineering,OS,General,Gender-Neutral,20000,38000,JEE Main
+NIT Calicut,Computer Science and Engineering,HS,General,Gender-Neutral,4200,9500,JEE Main
+NIT Calicut,Computer Science and Engineering,OS,General,Gender-Neutral,5500,12000,JEE Main
+NIT Calicut,Electronics and Communication Engineering,OS,General,Gender-Neutral,9000,18000,JEE Main
+NIT Calicut,Electrical Engineering,OS,General,Gender-Neutral,11000,22000,JEE Main
+NIT Calicut,Mechanical Engineering,OS,General,Gender-Neutral,15000,30000,JEE Main
+NIT Calicut,Civil Engineering,OS,General,Gender-Neutral,22000,42000,JEE Main
+NIT Rourkela,Computer Science and Engineering,HS,General,Gender-Neutral,5000,11000,JEE Main
+NIT Rourkela,Computer Science and Engineering,OS,General,Gender-Neutral,6500,14000,JEE Main
+NIT Rourkela,Electronics and Communication Engineering,OS,General,Gender-Neutral,10000,20000,JEE Main
+NIT Rourkela,Electrical Engineering,OS,General,Gender-Neutral,12000,24000,JEE Main
+NIT Rourkela,Mechanical Engineering,OS,General,Gender-Neutral,16000,32000,JEE Main
+NIT Rourkela,Civil Engineering,OS,General,Gender-Neutral,24000,45000,JEE Main
+VNIT Nagpur,Computer Science and Engineering,HS,General,Gender-Neutral,5500,12000,JEE Main
+VNIT Nagpur,Computer Science and Engineering,OS,General,Gender-Neutral,7000,15000,JEE Main
+VNIT Nagpur,Electronics and Communication Engineering,OS,General,Gender-Neutral,11000,22000,JEE Main
+VNIT Nagpur,Electrical Engineering,OS,General,Gender-Neutral,14000,28000,JEE Main
+VNIT Nagpur,Mechanical Engineering,OS,General,Gender-Neutral,18000,35000,JEE Main
+MNIT Jaipur,Computer Science and Engineering,HS,General,Gender-Neutral,6000,13000,JEE Main
+MNIT Jaipur,Computer Science and Engineering,OS,General,Gender-Neutral,7500,16000,JEE Main
+MNIT Jaipur,Electronics and Communication Engineering,OS,General,Gender-Neutral,12000,24000,JEE Main
+MNIT Jaipur,Electrical Engineering,OS,General,Gender-Neutral,15000,30000,JEE Main
+MNIT Jaipur,Mechanical Engineering,OS,General,Gender-Neutral,20000,38000,JEE Main
+MNNIT Allahabad,Computer Science and Engineering,HS,General,Gender-Neutral,6500,14000,JEE Main
+MNNIT Allahabad,Computer Science and Engineering,OS,General,Gender-Neutral,8000,17000,JEE Main
+MNNIT Allahabad,Electronics and Communication Engineering,OS,General,Gender-Neutral,13000,26000,JEE Main
+MNNIT Allahabad,Electrical Engineering,OS,General,Gender-Neutral,16000,32000,JEE Main
+MNNIT Allahabad,Mechanical Engineering,OS,General,Gender-Neutral,22000,42000,JEE Main
+NIT Durgapur,Computer Science and Engineering,OS,General,Gender-Neutral,10000,22000,JEE Main
+NIT Durgapur,Electronics and Communication Engineering,OS,General,Gender-Neutral,16000,32000,JEE Main
+NIT Durgapur,Electrical Engineering,OS,General,Gender-Neutral,20000,38000,JEE Main
+NIT Durgapur,Mechanical Engineering,OS,General,Gender-Neutral,26000,48000,JEE Main
+NIT Silchar,Computer Science and Engineering,OS,General,Gender-Neutral,14000,28000,JEE Main
+NIT Silchar,Electronics and Communication Engineering,OS,General,Gender-Neutral,22000,42000,JEE Main
+NIT Silchar,Electrical Engineering,OS,General,Gender-Neutral,28000,52000,JEE Main
+NIT Silchar,Mechanical Engineering,OS,General,Gender-Neutral,32000,58000,JEE Main
+NIT Hamirpur,Computer Science and Engineering,OS,General,Gender-Neutral,16000,32000,JEE Main
+NIT Hamirpur,Electronics and Communication Engineering,OS,General,Gender-Neutral,25000,48000,JEE Main
+NIT Hamirpur,Electrical Engineering,OS,General,Gender-Neutral,30000,55000,JEE Main
+NIT Hamirpur,Mechanical Engineering,OS,General,Gender-Neutral,35000,65000,JEE Main
+NIT Kurukshetra,Computer Science and Engineering,OS,General,Gender-Neutral,12000,25000,JEE Main
+NIT Kurukshetra,Electronics and Communication Engineering,OS,General,Gender-Neutral,18000,35000,JEE Main
+NIT Kurukshetra,Electrical Engineering,OS,General,Gender-Neutral,22000,42000,JEE Main
+NIT Kurukshetra,Mechanical Engineering,OS,General,Gender-Neutral,28000,52000,JEE Main
+NIT Agartala,Computer Science and Engineering,OS,General,Gender-Neutral,22000,42000,JEE Main
+NIT Agartala,Electronics and Communication Engineering,OS,General,Gender-Neutral,35000,65000,JEE Main
+NIT Agartala,Electrical Engineering,OS,General,Gender-Neutral,40000,72000,JEE Main
+NIT Agartala,Mechanical Engineering,OS,General,Gender-Neutral,48000,85000,JEE Main
+NIT Patna,Computer Science and Engineering,OS,General,Gender-Neutral,13000,27000,JEE Main
+NIT Patna,Electronics and Communication Engineering,OS,General,Gender-Neutral,20000,38000,JEE Main
+NIT Patna,Electrical Engineering,OS,General,Gender-Neutral,25000,48000,JEE Main
+NIT Patna,Mechanical Engineering,OS,General,Gender-Neutral,30000,55000,JEE Main
+IIIT Hyderabad,Computer Science and Engineering,AI,General,Gender-Neutral,1200,3500,JEE Main
+IIIT Hyderabad,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,600,2000,JEE Main
+IIIT Hyderabad,Electronics and Communication Engineering,AI,General,Gender-Neutral,2500,6000,JEE Main
+IIIT Hyderabad,Electronics and Communication Engineering,AI,OBC-NCL,Gender-Neutral,1200,3500,JEE Main
+IIIT Delhi,Computer Science and Engineering,AI,General,Gender-Neutral,2000,5000,JEE Main
+IIIT Delhi,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,1000,3000,JEE Main
+IIIT Delhi,Electronics and Communication Engineering,AI,General,Gender-Neutral,3500,8000,JEE Main
+IIIT Bangalore,Computer Science and Engineering,AI,General,Gender-Neutral,2500,6000,JEE Main
+IIIT Bangalore,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,1200,3500,JEE Main
+IIIT Bangalore,Electronics and Communication Engineering,AI,General,Gender-Neutral,4500,10000,JEE Main
+IIIT Allahabad,Computer Science and Engineering,AI,General,Gender-Neutral,5000,12000,JEE Main
+IIIT Allahabad,Computer Science and Engineering,AI,OBC-NCL,Gender-Neutral,2500,7000,JEE Main
+IIIT Allahabad,Electronics and Communication Engineering,AI,General,Gender-Neutral,8000,18000,JEE Main
+IIIT Gwalior,Computer Science and Engineering,AI,General,Gender-Neutral,8000,18000,JEE Main
+IIIT Gwalior,Electronics and Communication Engineering,AI,General,Gender-Neutral,12000,25000,JEE Main
+IIIT Jabalpur,Computer Science and Engineering,AI,General,Gender-Neutral,10000,22000,JEE Main
+IIIT Jabalpur,Electronics and Communication Engineering,AI,General,Gender-Neutral,15000,30000,JEE Main
+IIIT Kottayam,Computer Science and Engineering,AI,General,Gender-Neutral,12000,25000,JEE Main
+IIIT Kottayam,Electronics and Communication Engineering,AI,General,Gender-Neutral,18000,35000,JEE Main
+IIIT Lucknow,Computer Science and Engineering,AI,General,Gender-Neutral,9000,20000,JEE Main
+IIIT Lucknow,Electronics and Communication Engineering,AI,General,Gender-Neutral,14000,28000,JEE Main
+IIIT Sri City,Computer Science and Engineering,AI,General,Gender-Neutral,14000,28000,JEE Main
+IIIT Sri City,Electronics and Communication Engineering,AI,General,Gender-Neutral,20000,38000,JEE Main
+IIIT Vadodara,Computer Science and Engineering,AI,General,Gender-Neutral,15000,30000,JEE Main
+IIIT Vadodara,Electronics and Communication Engineering,AI,General,Gender-Neutral,22000,42000,JEE Main
