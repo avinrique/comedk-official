@@ -2437,7 +2437,7 @@ select.form-control {
   }
 
   .nav-hamburger {
-    display: flex;
+    display: none;
     z-index: 1001;
   }
 
@@ -2530,7 +2530,7 @@ select.form-control {
 
   /* Floating buttons adjust for bottom bar */
   .floating-buttons {
-    bottom: 20px;
+    bottom: 80px;
     right: 16px;
   }
 

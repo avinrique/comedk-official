@@ -353,6 +353,11 @@ var Predictor = (function () {
     // Clear previous results
     hideResults();
     clearErrors();
+
+    // Smooth scroll to input section
+    if (dom.inputSection) {
+      dom.inputSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   // ---- Update Input Label ----

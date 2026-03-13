@@ -38,8 +38,16 @@ app.use('/api/predictor', predictorRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/settings', settingsRoutes);
 
+// Serve frontend static files
+const frontendPath = path.join(__dirname, '..', '..', 'frontend');
+app.use(express.static(frontendPath));
+
+// For any non-API route, serve the frontend (SPA fallback)
 app.use((req, res) => {
-  res.status(404).json({ success: false, message: `Route ${req.originalUrl} not found` });
+  if (req.originalUrl.startsWith('/api/')) {
+    return res.status(404).json({ success: false, message: `Route ${req.originalUrl} not found` });
+  }
+  res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 app.use(errorHandler);
