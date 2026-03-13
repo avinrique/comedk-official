@@ -1,11 +1,9 @@
 const express = require('express');
-const cors = require('cors');
 const path = require('path');
 
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const connectDB = require('./config/database');
-const corsOptions = require('./config/cors');
 const errorHandler = require('./middleware/errorHandler');
 
 const authRoutes = require('./routes/auth.routes');
@@ -20,7 +18,6 @@ const settingsRoutes = require('./routes/settings.routes');
 
 const app = express();
 
-app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
