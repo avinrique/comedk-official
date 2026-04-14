@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const https = require('https');
+const fs = require('fs');
 
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
@@ -17,6 +19,10 @@ const usersRoutes = require('./routes/users.routes');
 const settingsRoutes = require('./routes/settings.routes');
 
 const app = express();
+const sslOptions = {
+  key: fs.readFileSync('/etc/letsencrypt/live/lspredictor.com/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/lspredictor.com/fullchain.pem')
+};
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -55,9 +61,9 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    app.listen(PORT, () => {
-      console.log(`LS Predictor API server running on port ${PORT}`);
-      console.log(`Health check: http://localhost:${PORT}/api/health`);
+    https.createServer(sslOptions, app).listen(PORT, () => {
+      console.log(`LS Predictor HTTPS server running on port ${PORT}`);
+      console.log(`Health check: https://lspredictor.com/api/health`);
     });
   } catch (err) {
     console.error('Failed to start server:', err.message);
