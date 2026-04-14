@@ -92,7 +92,7 @@ Vanilla HTML/CSS/JS — no build step, no framework.
   - `detail.js` — Lead detail modal (3 tabs: Info, Activity/Notes, Reminders)
   - `analytics.js` — Dashboard overview cards, pipeline/source/trend charts
 
-**Design system** in `css/style.css`: Primary green (#0ea960), accent orange (#ff6b35). Fonts: Poppins (headings), Inter (body).
+**Design system** in `css/style.css`: Primary deep indigo (#1e3a5f), accent coral (#e8614d), tertiary teal (#2ec4b6). Fonts: Poppins (headings), Inter (body).
 
 ### Key Data Flow
 

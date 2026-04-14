@@ -149,6 +149,19 @@ function initScrollReveal() {
   revealElements.forEach(function (el) {
     observer.observe(el);
   });
+
+  // Fallback: reveal elements already in viewport after a short delay
+  // (handles cases where IntersectionObserver doesn't fire on initial load)
+  setTimeout(function () {
+    revealElements.forEach(function (el) {
+      if (!el.classList.contains('revealed')) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('revealed');
+        }
+      }
+    });
+  }, 100);
 }
 
 /* -----------------------------------------
