@@ -485,6 +485,70 @@ p {
   width: 100%;
 }
 
+/* Navbar Dropdown */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.dropdown-toggle svg {
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown:hover .dropdown-toggle svg {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(30, 58, 95, 0.15);
+  padding: 8px 0;
+  min-width: 280px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  z-index: 1100;
+  border: 1px solid rgba(30, 58, 95, 0.08);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.dropdown-menu a::after {
+  display: none;
+}
+
 .nav-cta {
   flex-shrink: 0;
 }
@@ -2378,6 +2442,111 @@ select.form-control {
 }
 
 /* ============================================
+   COLLEGE PAGES
+   ============================================ */
+.college-info-cards {
+  padding: var(--space-xl) 0;
+  background: var(--bg-white);
+  margin-top: -48px;
+  position: relative;
+  z-index: 2;
+}
+
+.college-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.college-info-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.college-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary) 0%, #264d7a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+}
+
+.college-info-text h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.college-info-text span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.college-content {
+  padding: var(--space-3xl) 0;
+}
+
+.college-body {
+  max-width: 900px;
+  margin-bottom: var(--space-2xl);
+}
+
+.college-body h2,
+.college-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-md);
+  color: var(--text-dark);
+}
+
+.college-body p {
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
+}
+
+.college-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.college-list {
+  list-style: none;
+  padding: 0;
+}
+
+.college-list li {
+  padding: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+  position: relative;
+  line-height: 1.7;
+}
+
+.college-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+/* ============================================
    RESPONSIVE -- Large Tablet (1024px)
    ============================================ */
 @media (max-width: 1024px) {
@@ -2598,6 +2767,56 @@ select.form-control {
   .page-hero {
     padding-top: calc(var(--nav-height) + var(--space-2xl));
     padding-bottom: var(--space-2xl);
+  }
+
+  /* College pages mobile */
+  .college-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Dropdown mobile */
+  .nav-dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: rgba(30, 58, 95, 0.03);
+    border-radius: 8px;
+    min-width: auto;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0;
+  }
+
+  .nav-dropdown.open .dropdown-menu {
+    max-height: 500px;
+    padding: 8px 0;
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdown-menu a {
+    font-size: 1rem;
+    text-align: center;
+    padding: 8px 16px;
   }
 }
 

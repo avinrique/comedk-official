@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact LS Predictor — reach out to us for college admission queries, feedback, or partnership opportunities.">
+  <meta name="description" content="RV College of Engineering, Bangalore — admissions, placements, courses, cutoffs. Use LS Predictor to check your chances.">
   <meta name="author" content="LS Predictor">
   <meta name="theme-color" content="#1e3a5f">
-  <title>Contact Us — LS Predictor</title>
+  <title>RV College of Engineering — LS Predictor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
-          <a href="#" class="dropdown-toggle">Colleges <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <a href="#" class="dropdown-toggle active">Colleges <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="dropdown-menu">
             <a href="rv-college.html">RV College of Engineering</a>
             <a href="ramaiah.html">Ramaiah Institute of Technology</a>
@@ -46,7 +46,7 @@
         </div>
         <a href="predictor.html">Predictor</a>
         <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
 
       <div class="nav-cta">
@@ -64,133 +64,108 @@
   <!-- ========== PAGE HERO ========== -->
   <section class="page-hero">
     <div class="container">
-      <span class="section-label">Contact</span>
-      <h1 class="heading-xl">Get In Touch</h1>
-      <p>Have a question about college admissions, our predictor tool, or want to collaborate? We would love to hear from you.</p>
+      <span class="section-label">College Profile</span>
+      <h1 class="heading-xl">RV College of Engineering</h1>
+      <p>Bangalore, Karnataka — Established 1963 | Affiliated to VTU | 52-Acre Campus</p>
     </div>
   </section>
 
-  <!-- ========== CONTACT SECTION ========== -->
-  <section class="contact-section section-padding">
+  <!-- ========== INFO CARDS ========== -->
+  <section class="college-info-cards">
     <div class="container">
-      <div class="contact-grid">
-        <!-- Contact Form -->
-        <div class="contact-form-wrap reveal">
-          <h2>Send Us a Message</h2>
-          <p>Fill out the form below and our team will get back to you within 24 hours.</p>
-
-          <div class="form-success-message" id="formSuccessMsg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Thank you! Your message has been sent successfully. We will get back to you soon.
+      <div class="college-info-grid">
+        <div class="college-info-card">
+          <div class="college-info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
-
-          <div class="form-error-message" id="formErrorMsg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-            Something went wrong. Please try again later or contact us directly by phone.
+          <div class="college-info-text">
+            <h4>67 LPA</h4>
+            <span>Highest Package</span>
           </div>
-
-          <form id="contactForm" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contactName">Full Name *</label>
-                <input type="text" id="contactName" name="name" class="form-control" placeholder="Enter your full name" required>
-                <span class="form-error">Please enter your name</span>
-              </div>
-              <div class="form-group">
-                <label for="contactEmail">Email Address *</label>
-                <input type="email" id="contactEmail" name="email" class="form-control" placeholder="you@example.com" required>
-                <span class="form-error">Please enter a valid email address</span>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contactPhone">Phone Number</label>
-                <input type="tel" id="contactPhone" name="phone" class="form-control" placeholder="+91 84820 67016">
-                <span class="form-error">Please enter a valid phone number</span>
-              </div>
-              <div class="form-group">
-                <label for="contactExam">Exam Interest</label>
-                <select id="contactExam" name="exam" class="form-control">
-                  <option value="">Select an exam</option>
-                  <option value="comedk">COMEDK UGET</option>
-                  <option value="jee_main">JEE Main</option>
-                  <option value="neet">NEET</option>
-                  <option value="srm">SRM (SRMJEE)</option>
-                  <option value="vit">VIT (VITEEE)</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="contactMessage">Message *</label>
-              <textarea id="contactMessage" name="message" class="form-control" placeholder="Tell us how we can help you..." rows="5" required></textarea>
-              <span class="form-error">Please enter your message</span>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-lg" id="contactSubmitBtn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send Message
-            </button>
-          </form>
         </div>
-
-        <!-- Contact Info Cards -->
-        <div class="contact-info-cards reveal reveal-delay-1">
-          <div class="contact-info-card">
-            <div class="contact-info-icon green">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div>
-              <h4>Phone</h4>
-              <p><a href="tel:+918482067016">+91 84820 67016</a></p>
-              <p>Mon — Sat, 9:00 AM to 6:00 PM</p>
-            </div>
+        <div class="college-info-card">
+          <div class="college-info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-
-          <div class="contact-info-card">
-            <div class="contact-info-icon blue">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
-            </div>
-            <div>
-              <h4>Email</h4>
-              <p><a href="mailto:Lsconsultancy.adm@gmail.com">Lsconsultancy.adm@gmail.com</a></p>
-              <p>We respond within 24 hours</p>
-            </div>
+          <div class="college-info-text">
+            <h4>Private, Autonomous</h4>
+            <span>College Type</span>
           </div>
-
-          <div class="contact-info-card">
-            <div class="contact-info-icon orange">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h4>Office Address</h4>
-              <p>123, 4th Floor, Tech Park</p>
-              <p>Koramangala, Bangalore 560034</p>
-            </div>
+        </div>
+        <div class="college-info-card">
+          <div class="college-info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-
-          <div class="contact-info-card">
-            <div class="contact-info-icon purple">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            </div>
-            <div>
-              <h4>Working Hours</h4>
-              <p>Monday to Saturday</p>
-              <p>9:00 AM — 6:00 PM IST</p>
-            </div>
+          <div class="college-info-text">
+            <h4>NAAC A+</h4>
+            <span>Accreditation</span>
           </div>
-
-          <!-- Map Placeholder -->
-          <div class="map-placeholder">
-            <div class="text-center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <p>Map integration available</p>
-            </div>
+        </div>
+        <div class="college-info-card">
+          <div class="college-info-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="college-info-text">
+            <h4>NBA, AICTE</h4>
+            <span>Approval</span>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ========== COLLEGE CONTENT ========== -->
+  <section class="college-content">
+    <div class="container">
+      <div class="college-body">
+        <h2>About RV College of Engineering</h2>
+        <p>RV College of Engineering (RVCE) is one of the most prestigious engineering institutions in Karnataka, located on a sprawling 52-acre campus in Bangalore. Established in 1963 under the Rashtreeya Sikshana Samithi Trust, RVCE has consistently ranked among the top private engineering colleges in India.</p>
+        <p>The college is affiliated to Visvesvaraya Technological University (VTU) and has been granted autonomous status. With NAAC A+ accreditation and NBA-accredited programs, RVCE is recognized for its academic excellence, research output, and strong industry connections.</p>
+        <p>RVCE offers a vibrant campus life with state-of-the-art laboratories, a well-stocked library, sports facilities, and numerous student clubs and technical societies. The institution places a strong emphasis on innovation, entrepreneurship, and holistic development of its students.</p>
+      </div>
+
+      <div class="college-section">
+        <h2>Placements at RVCE</h2>
+        <ul class="college-list">
+          <li>Highest package of 67 LPA with average packages ranging from 6-8 LPA</li>
+          <li>Top recruiters include Google, Microsoft, Amazon, IBM, Accenture, Infosys, Wipro, and TCS</li>
+          <li>Strong placement cell with dedicated training and pre-placement activities</li>
+          <li>Consistent placement record with over 90% of eligible students placed annually</li>
+          <li>Regular visits from Fortune 500 companies and leading startups</li>
+        </ul>
+      </div>
+
+      <div class="college-section">
+        <h2>Courses Offered</h2>
+        <div class="courses-grid">
+          <div class="college-info-card"><div class="college-info-text"><h4>Computer Science & Engineering</h4><span>CSE</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Information Science & Engineering</h4><span>ISE</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Electronics & Communication Engineering</h4><span>ECE</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Electrical & Electronics Engineering</h4><span>EEE</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Mechanical Engineering</h4><span>ME</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Civil Engineering</h4><span>CE</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Biotechnology</h4><span>BT</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Artificial Intelligence & Machine Learning</h4><span>AI & ML</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Data Science</h4><span>DS</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Cyber Security</h4><span>CS</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Aerospace Engineering</h4><span>AE</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Chemical Engineering</h4><span>CH</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Industrial Engineering & Management</h4><span>IEM</span></div></div>
+          <div class="college-info-card"><div class="college-info-text"><h4>Electronics & Telecommunication</h4><span>E&TC</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="cta-section">
+    <div class="container reveal">
+      <h2 class="heading-lg">Check Your Chances at RVCE</h2>
+      <p>Use our predictor to find out if your COMEDK score is enough for admission to RV College of Engineering.</p>
+      <a href="predictor.html" class="btn btn-white btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        Try the Predictor
+      </a>
     </div>
   </section>
 
@@ -205,21 +180,12 @@
           </a>
           <p>AI-powered college admission guidance platform helping students find their perfect college based on exam scores and real cutoff data.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="#" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <a href="#" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
-            </a>
+            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
           </div>
         </div>
-
         <div class="footer-column">
           <h4>Quick Links</h4>
           <ul>
@@ -229,7 +195,6 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Exams</h4>
           <ul>
@@ -240,7 +205,6 @@
             <li><a href="predictor.html">VIT Predictor</a></li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Contact Us</h4>
           <div class="footer-contact-item">
@@ -257,7 +221,6 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <span>&copy; 2026 LS Predictor. All rights reserved.</span>
         <div class="footer-bottom-links">
@@ -293,7 +256,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         About
       </a>
-      <a href="contact.html" class="active" data-page="contact">
+      <a href="contact.html" data-page="contact">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
         Contact
       </a>
@@ -301,6 +264,5 @@
   </div>
 
   <script src="js/main.js"></script>
-  <script src="js/contact.js"></script>
 </body>
 </html>
