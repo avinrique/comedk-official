@@ -19,10 +19,14 @@ const usersRoutes = require('./routes/users.routes');
 const settingsRoutes = require('./routes/settings.routes');
 
 const app = express();
-const sslOptions = {
-  key: fs.readFileSync('/etc/letsencrypt/live/lspredictor.com/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/lspredictor.com/fullchain.pem')
-};
+
+const SSL_KEY_PATH = '/etc/letsencrypt/live/lspredictor.com/privkey.pem';
+const SSL_CERT_PATH = '/etc/letsencrypt/live/lspredictor.com/fullchain.pem';
+const useSSL = fs.existsSync(SSL_KEY_PATH) && fs.existsSync(SSL_CERT_PATH);
+const sslOptions = useSSL ? {
+  key: fs.readFileSync(SSL_KEY_PATH),
+  cert: fs.readFileSync(SSL_CERT_PATH)
+} : null;
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -61,10 +65,17 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    https.createServer(sslOptions, app).listen(PORT, () => {
-      console.log(`LS Predictor HTTPS server running on port ${PORT}`);
-      console.log(`Health check: https://lspredictor.com/api/health`);
-    });
+    if (useSSL) {
+      https.createServer(sslOptions, app).listen(PORT, () => {
+        console.log(`LS Predictor HTTPS server running on port ${PORT}`);
+        console.log(`Health check: https://lspredictor.com/api/health`);
+      });
+    } else {
+      app.listen(PORT, () => {
+        console.log(`LS Predictor HTTP server running on port ${PORT}`);
+        console.log(`Health check: http://localhost:${PORT}/api/health`);
+      });
+    }
   } catch (err) {
     console.error('Failed to start server:', err.message);
     process.exit(1);
