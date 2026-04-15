@@ -251,46 +251,27 @@
           </div>
         </div>
 
-        <!-- Results Table -->
+        <!-- Results Cards -->
         <div class="results-section" id="resultsSection">
           <div class="results-table-header">
             <h3>Matching Colleges</h3>
-            <span class="results-count" id="resultsCount"></span>
+            <div class="results-header-right">
+              <span class="results-count" id="resultsCount"></span>
+              <div class="results-sort-control">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect" class="form-control">
+                  <option value="chance-asc">Chance (Best first)</option>
+                  <option value="collegeName-asc">College (A-Z)</option>
+                  <option value="collegeName-desc">College (Z-A)</option>
+                  <option value="cutoffRank-asc">Cutoff Rank (Low-High)</option>
+                  <option value="cutoffRank-desc">Cutoff Rank (High-Low)</option>
+                  <option value="branch-asc">Branch (A-Z)</option>
+                </select>
+              </div>
+            </div>
           </div>
 
-          <div class="results-table-wrap">
-            <table class="results-table" id="resultsTable">
-              <thead>
-                <tr>
-                  <th data-sort="collegeName">
-                    College
-                    <svg class="sort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
-                  </th>
-                  <th data-sort="branch">
-                    Program / Branch
-                    <svg class="sort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
-                  </th>
-                  <th data-sort="category">
-                    Category
-                    <svg class="sort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
-                  </th>
-                  <th data-sort="cutoffRank">
-                    Cutoff Rank
-                    <svg class="sort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
-                  </th>
-                  <th data-sort="yourRank">
-                    Your Rank
-                    <svg class="sort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
-                  </th>
-                  <th data-sort="chance">
-                    Chance
-                    <svg class="sort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
-                  </th>
-                </tr>
-              </thead>
-              <tbody id="resultsTableBody">
-              </tbody>
-            </table>
+          <div class="results-cards-grid" id="resultsCardsGrid">
           </div>
 
           <!-- Empty State -->

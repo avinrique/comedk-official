@@ -1,7 +1,7 @@
 const parseCorsOrigins = () => {
   const originsEnv = process.env.CORS_ORIGINS || '';
   if (!originsEnv) {
-    return ['http://localhost:8000'];
+    return ['http://localhost:8000', 'http://localhost:8001'];
   }
   return originsEnv.split(',').map((origin) => origin.trim()).filter(Boolean);
 };

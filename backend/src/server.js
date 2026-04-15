@@ -18,6 +18,9 @@ const predictorRoutes = require('./routes/predictor.routes');
 const usersRoutes = require('./routes/users.routes');
 const settingsRoutes = require('./routes/settings.routes');
 
+const cors = require('cors');
+const corsOptions = require('./config/cors');
+
 const app = express();
 
 const SSL_KEY_PATH = '/etc/letsencrypt/live/lspredictor.com/privkey.pem';
@@ -28,6 +31,7 @@ const sslOptions = useSSL ? {
   cert: fs.readFileSync(SSL_CERT_PATH)
 } : null;
 
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 

@@ -109,8 +109,8 @@ var Predictor = (function () {
     dom.statTotalMatches = document.getElementById('statTotalMatches');
     dom.resultsSection = document.getElementById('resultsSection');
     dom.resultsCount = document.getElementById('resultsCount');
-    dom.resultsTable = document.getElementById('resultsTable');
-    dom.resultsTableBody = document.getElementById('resultsTableBody');
+    dom.resultsCardsGrid = document.getElementById('resultsCardsGrid');
+    dom.sortSelect = document.getElementById('sortSelect');
     dom.resultsEmpty = document.getElementById('resultsEmpty');
     dom.resultsPagination = document.getElementById('resultsPagination');
     dom.leadCaptureCard = document.getElementById('leadCaptureCard');
@@ -633,7 +633,7 @@ var Predictor = (function () {
   }
 
   function renderTablePage() {
-    if (!dom.resultsTableBody) return;
+    if (!dom.resultsCardsGrid) return;
 
     var start = (currentPage - 1) * perPage;
     var end = start + perPage;
@@ -652,25 +652,36 @@ var Predictor = (function () {
       var chanceClass = getChanceClass(chance);
       var chanceLabel = getChanceLabel(chance);
 
-      html += '<tr>' +
-        '<td>' +
-          '<div class="college-name">' + escapeHtml(collegeName) + '</div>' +
-          (location ? '<div class="college-location">' + escapeHtml(location) + '</div>' : '') +
-        '</td>' +
-        '<td>' + escapeHtml(branch) + '</td>' +
-        '<td>' + escapeHtml(category) + '</td>' +
-        '<td>' + formatRank(cutoffRank) + '</td>' +
-        '<td>' + formatRank(yourRank) + '</td>' +
-        '<td>' +
+      html += '<div class="college-card ' + chanceClass + '">' +
+        '<div class="college-card-top">' +
+          '<div class="college-card-info">' +
+            '<h4 class="college-card-name">' + escapeHtml(collegeName) + '</h4>' +
+            (location ? '<span class="college-card-location"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' + escapeHtml(location) + '</span>' : '') +
+          '</div>' +
           '<span class="chance-badge ' + chanceClass + '">' +
             '<span class="chance-dot"></span>' +
             chanceLabel +
           '</span>' +
-        '</td>' +
-      '</tr>';
+        '</div>' +
+        '<div class="college-card-tags">' +
+          '<span class="card-tag branch-tag">' + escapeHtml(branch) + '</span>' +
+          (category ? '<span class="card-tag category-tag">' + escapeHtml(category) + '</span>' : '') +
+        '</div>' +
+        '<div class="college-card-ranks">' +
+          '<div class="rank-item">' +
+            '<span class="rank-label">Cutoff Rank</span>' +
+            '<span class="rank-value">' + formatRank(cutoffRank) + '</span>' +
+          '</div>' +
+          '<div class="rank-divider"></div>' +
+          '<div class="rank-item">' +
+            '<span class="rank-label">Your Rank</span>' +
+            '<span class="rank-value your-rank">' + formatRank(yourRank) + '</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
     });
 
-    dom.resultsTableBody.innerHTML = html;
+    dom.resultsCardsGrid.innerHTML = html;
   }
 
   // ---- Chance Badge Logic ----
@@ -791,47 +802,24 @@ var Predictor = (function () {
     return pages;
   }
 
-  // ---- Table Sorting ----
+  // ---- Sort Dropdown ----
   function setupTableSorting() {
-    if (!dom.resultsTable) return;
+    if (!dom.sortSelect) return;
 
-    var headers = dom.resultsTable.querySelectorAll('th[data-sort]');
-    headers.forEach(function (th) {
-      th.addEventListener('click', function () {
-        var column = th.getAttribute('data-sort');
+    dom.sortSelect.addEventListener('change', function () {
+      var val = dom.sortSelect.value;
+      var parts = val.split('-');
+      var column = parts[0];
+      var direction = parts[1];
 
-        // Toggle direction
-        if (sortColumn === column) {
-          sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-        } else {
-          sortColumn = column;
-          sortDirection = 'asc';
-        }
+      sortColumn = column;
+      sortDirection = direction;
 
-        // Update visual state on headers
-        headers.forEach(function (h) {
-          h.classList.remove('sorted');
-        });
-        th.classList.add('sorted');
+      sortResults(column, direction);
 
-        // Update sort icon direction
-        var icon = th.querySelector('.sort-icon');
-        if (icon) {
-          if (sortDirection === 'desc') {
-            icon.style.transform = 'rotate(180deg)';
-          } else {
-            icon.style.transform = 'rotate(0deg)';
-          }
-        }
-
-        // Sort allResults
-        sortResults(column, sortDirection);
-
-        // Re-render
-        currentPage = 1;
-        renderTablePage();
-        renderPagination();
-      });
+      currentPage = 1;
+      renderTablePage();
+      renderPagination();
     });
   }
 
@@ -928,19 +916,13 @@ var Predictor = (function () {
 
   function showEmptyState() {
     if (dom.resultsEmpty) dom.resultsEmpty.style.display = 'block';
-    if (dom.resultsTableBody) dom.resultsTableBody.innerHTML = '';
+    if (dom.resultsCardsGrid) dom.resultsCardsGrid.innerHTML = '';
     if (dom.resultsPagination) dom.resultsPagination.style.display = 'none';
 
-    // Hide table header row when empty
-    var thead = dom.resultsTable ? dom.resultsTable.querySelector('thead') : null;
-    if (thead) thead.style.display = 'none';
   }
 
   function hideEmptyState() {
     if (dom.resultsEmpty) dom.resultsEmpty.style.display = 'none';
-
-    var thead = dom.resultsTable ? dom.resultsTable.querySelector('thead') : null;
-    if (thead) thead.style.display = '';
   }
 
   // ---- Lead Capture ----
