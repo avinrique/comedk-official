@@ -3468,6 +3468,102 @@ select.form-control {
 }
 
 /* ============================================
+   LEGAL PAGES (Terms, Privacy, Disclaimer)
+   ============================================ */
+.legal-content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: var(--space-2xl) 0;
+}
+
+.legal-content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.legal-content h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.legal-content p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-body);
+  margin-bottom: var(--space-md);
+}
+
+.legal-content ul,
+.legal-content ol {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-xl);
+}
+
+.legal-content li {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-body);
+  margin-bottom: var(--space-xs);
+}
+
+.legal-content strong {
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+.legal-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.legal-content a:hover {
+  color: var(--accent);
+}
+
+.legal-content .legal-updated {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.legal-content .legal-contact-box {
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.legal-content .legal-contact-box h3 {
+  margin-top: 0;
+}
+
+.legal-content .legal-contact-box p {
+  margin-bottom: var(--space-xs);
+}
+
+.legal-content .legal-contact-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
