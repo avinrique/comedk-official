@@ -3291,13 +3291,45 @@ select.form-control {
 
   /* Floating buttons adjust for bottom bar */
   .floating-buttons {
-    bottom: 80px;
-    right: 16px;
+    bottom: 72px;
+    right: 12px;
+    gap: 8px;
   }
 
   .float-btn {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .float-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Prevent last tab hiding under floating buttons */
+  .college-tabs .container {
+    padding-right: 72px;
+  }
+
+  /* Compact info tiles on mobile */
+  .key-info-row {
+    gap: 8px;
+  }
+  .key-info-item {
+    padding: 10px 8px;
+  }
+  .key-info-item .ki-icon {
+    margin-bottom: 2px;
+  }
+  .key-info-item .ki-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .key-info-item .ki-label {
+    font-size: 0.7rem;
+  }
+  .key-info-item .ki-value {
+    font-size: 0.72rem;
   }
 
   /* Mobile bottom bar */
