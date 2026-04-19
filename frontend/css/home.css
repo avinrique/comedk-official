@@ -1,3 +1,72 @@
+/* ============================================
+   LS Predictor — Homepage specific styles
+   Layout inspired by liberatingsolution.com
+   ============================================ */
+
+/* ---- Trust strip (under hero) ---- */
+.trust-strip {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 18px 0;
+}
+.trust-strip .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 32px;
+}
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-body);
+}
+.trust-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--tertiary);
+  flex-shrink: 0;
+}
+
+/* ---- Stats banner ---- */
+.stats-banner {
+  background: linear-gradient(135deg, #1e3a5f 0%, #264d7a 100%);
+  color: white;
+  padding: var(--space-3xl) 0;
+}
+.stats-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+.stat-block {
+  text-align: center;
+}
+.stat-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1;
+  color: white;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.stat-num .stat-plus {
+  color: var(--tertiary);
+}
+.stat-label {
+  display: block;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 /* ---- How it works ---- */
 .steps-section { background: var(--bg-white); }
 .steps-grid {
@@ -35,6 +104,165 @@
   color: var(--text-muted);
   line-height: 1.6;
 }
+
+/* ---- Why Choose grid ---- */
+.why-choose-section { background: var(--bg-light); }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+.why-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.why-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--primary-light);
+  color: var(--primary);
+  margin-bottom: var(--space-md);
+}
+.why-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.why-card.accent .why-icon {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+.why-card.tertiary .why-icon {
+  background: var(--tertiary-light);
+  color: var(--tertiary-dark);
+}
+.why-card h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.why-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- Alternating feature rows ---- */
+.feature-row-section { background: var(--bg-white); }
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  margin-bottom: var(--space-3xl);
+}
+.feature-row:last-child { margin-bottom: 0; }
+.feature-row.reverse .feature-row-text { order: 2; }
+.feature-row.reverse .feature-row-visual { order: 1; }
+
+.feature-row-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-md);
+}
+.feature-row-text h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+  color: var(--text-dark);
+}
+.feature-row-text > p {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+.feature-bullets {
+  margin-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feature-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9375rem;
+  color: var(--text-body);
+}
+.feature-bullets li svg {
+  width: 18px;
+  height: 18px;
+  color: var(--tertiary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Feature visual — built from pure CSS/SVG, no images */
+.feature-row-visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #eef3f9 0%, #f7f8fc 100%);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  padding: var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature-row-visual.accent {
+  background: linear-gradient(135deg, #fdeeed 0%, #fff5f3 100%);
+}
+.feature-mock-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: var(--shadow-md);
+}
+.feature-mock-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.875rem;
+}
+.feature-mock-row:last-child { border-bottom: none; }
+.feature-mock-row .mock-label { color: var(--text-body); font-weight: 500; }
+.feature-mock-row .mock-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+.mock-chip.safe { background: rgba(46,196,182,0.12); color: #1a8a7e; }
+.mock-chip.good { background: rgba(240,173,78,0.15); color: #b97b15; }
+.mock-chip.reach { background: rgba(232,97,77,0.12); color: #b8402e; }
 
 /* ---- College grid ---- */
 .college-grid {
@@ -138,9 +366,69 @@
 .exam-pill .pill-dot.srm { background: #1e3a5f; }
 .exam-pill .pill-dot.vit { background: #8b5cf6; }
 
+/* ---- Lead-capture consultation form ---- */
+.consult-section { background: var(--bg-light); }
+.consult-card {
+  max-width: 640px;
+  margin: var(--space-xl) auto 0;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+}
+.consult-form { display: grid; gap: var(--space-md); }
+.consult-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.consult-form label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.consult-form input,
+.consult-form select,
+.consult-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.9375rem;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.consult-form input:focus,
+.consult-form select:focus,
+.consult-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30,58,95,0.1);
+}
+.consult-form .form-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.consult-form .btn { width: 100%; }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .stats-banner-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-row { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .feature-row.reverse .feature-row-text { order: 1; }
+  .feature-row.reverse .feature-row-visual { order: 2; }
+}
 @media (max-width: 768px) {
   .steps-grid { grid-template-columns: 1fr; gap: var(--space-md); }
   .college-grid { grid-template-columns: 1fr; }
   .exams-strip { gap: var(--space-sm); }
   .exam-pill { padding: 10px 18px; font-size: 0.8125rem; }
+  .why-grid { grid-template-columns: 1fr; }
+  .stats-banner-grid { grid-template-columns: repeat(2, 1fr); }
+  .consult-form .form-row { grid-template-columns: 1fr; }
+  .consult-card { padding: var(--space-xl); }
+  .trust-strip .container { gap: 10px 20px; }
 }
