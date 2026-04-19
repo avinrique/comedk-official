@@ -565,6 +565,42 @@
 }
 .consult-form .btn { width: 100%; }
 
+/* ---- Disclaimer strip ---- */
+.home-disclaimer {
+  background: var(--bg-light);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: var(--space-xl) 0;
+}
+.disclaimer-box {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-xl);
+}
+.disclaimer-box .disclaimer-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.disclaimer-box .disclaimer-text {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-body);
+}
+.disclaimer-box .disclaimer-text strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
   .stats-banner-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
