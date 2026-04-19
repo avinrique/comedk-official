@@ -3,6 +3,156 @@
    Layout inspired by liberatingsolution.com
    ============================================ */
 
+/* ---- Hero 2-col layout (text + visual) ---- */
+.hero-home .container {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+.hero-home-inner { max-width: none; }
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  aspect-ratio: 5 / 6;
+}
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: -10% -15% -5% -5%;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(46,196,182,0.25) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(232,97,77,0.18) 0%, transparent 55%);
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-card-main {
+  position: relative;
+  z-index: 2;
+  background: var(--bg-white);
+  border-radius: var(--radius-xl);
+  padding: 22px 22px 18px;
+  box-shadow: 0 30px 60px rgba(10,25,50,0.35), 0 10px 20px rgba(10,25,50,0.2);
+  transform: rotate(-2deg);
+  color: var(--text-dark);
+}
+.hero-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+.hero-card-header .hero-badge {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.hero-card-header .hero-rank {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+.hero-result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 0;
+  font-size: 0.875rem;
+  color: var(--text-body);
+  font-weight: 500;
+  border-bottom: 1px dashed var(--border-light);
+}
+.hero-result-row:last-child { border-bottom: none; }
+.hero-chip {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+}
+.hero-chip.safe { background: rgba(46,196,182,0.14); color: #1a8a7e; }
+.hero-chip.good { background: rgba(240,173,78,0.18); color: #a86c10; }
+.hero-chip.reach { background: rgba(232,97,77,0.14); color: #b8402e; }
+
+.hero-float {
+  position: absolute;
+  z-index: 3;
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: 0 12px 32px rgba(10,25,50,0.22);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+.hero-float svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.hero-float-1 {
+  top: 8%;
+  left: -8%;
+  transform: rotate(-4deg);
+}
+.hero-float-1 svg { color: var(--tertiary); }
+.hero-float-2 {
+  bottom: 10%;
+  right: -6%;
+  transform: rotate(3deg);
+}
+.hero-float-2 .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.hero-float-3 {
+  top: 48%;
+  left: -14%;
+  transform: rotate(-6deg);
+  background: linear-gradient(135deg, var(--accent) 0%, #d04e3a 100%);
+  color: white;
+}
+.hero-float-3 .mini-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+  display: block;
+}
+.hero-float-3 strong { font-size: 1rem; font-weight: 700; display: block; }
+
+@media (max-width: 900px) {
+  .hero-home .container { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .hero-visual { max-width: 360px; margin: 0 auto; }
+  .hero-float-1 { left: -4%; }
+  .hero-float-2 { right: -2%; }
+  .hero-float-3 { left: -8%; }
+}
+@media (max-width: 600px) {
+  .hero-visual { display: none; }
+}
+
+
 /* ---- Trust strip (under hero) ---- */
 .trust-strip {
   background: var(--bg-white);
@@ -105,55 +255,57 @@
   line-height: 1.6;
 }
 
-/* ---- Why Choose grid ---- */
+/* ---- Why Choose grid (scoped — overrides global .why-card in style.css) ---- */
 .why-choose-section { background: var(--bg-light); }
-.why-grid {
+.why-choose-section .why-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-lg);
   margin-top: var(--space-xl);
 }
-.why-card {
+.why-choose-section .why-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
   background: var(--bg-white);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: var(--space-xl) var(--space-lg);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.why-card:hover {
+.why-choose-section .why-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
-.why-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.why-choose-section .why-card .why-icon {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
   background: var(--primary-light);
   color: var(--primary);
   margin-bottom: var(--space-md);
+  flex-shrink: 0;
 }
-.why-icon svg {
+.why-choose-section .why-card .why-icon svg {
   width: 24px;
   height: 24px;
 }
-.why-card.accent .why-icon {
+.why-choose-section .why-card.accent .why-icon {
   background: var(--accent-light);
   color: var(--accent);
 }
-.why-card.tertiary .why-icon {
+.why-choose-section .why-card.tertiary .why-icon {
   background: var(--tertiary-light);
   color: var(--tertiary-dark);
 }
-.why-card h3 {
+.why-choose-section .why-card h3 {
   font-size: 1.0625rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 8px;
 }
-.why-card p {
+.why-choose-section .why-card p {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.6;

@@ -2555,9 +2555,15 @@ select.form-control {
 
 .cp-hero-profile {
   text-align: left;
-  padding: 0;
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+.cp-hero-profile h1,
+.cp-hero-profile .cp-location {
   max-width: 700px;
 }
 
