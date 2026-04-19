@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+# Block common non-public paths in case they appear
+Disallow: /backend/
+Disallow: /api/
+
+# Allow Google and Bing explicitly (helps with Ads quality score)
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
+# AdsBot — required for Google Ads landing-page crawling
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# Meta / Facebook crawler (for ad previews + OG scraping)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+Sitemap: https://lspredictor.com/sitemap.xml
