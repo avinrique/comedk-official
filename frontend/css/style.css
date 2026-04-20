@@ -3379,13 +3379,15 @@ select.form-control {
     position: static;
   }
   .cp-hero {
-    padding: 90px 0 32px;
+    padding: 90px 0 56px;
   }
   .cp-hero-banner { height: auto; }
   .cp-hero-profile { margin-top: 0; }
   .cp-hero-logo { width: 52px; height: 52px; }
   .cp-hero-logo img { width: 40px; height: 40px; }
   .cp-hero h1 { font-size: clamp(1.2rem, 4vw, 1.5rem); }
+  .cp-hero .cp-hero-cta { margin-bottom: 4px; }
+  .key-info-bar { margin-top: 16px; }
   .key-info-row {
     grid-template-columns: repeat(2, 1fr);
   }
