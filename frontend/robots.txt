@@ -30,4 +30,4 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-Sitemap: https://lspredictor.com/sitemap.xml
+Sitemap: https://lsconsultancyservices.com/sitemap.xml
