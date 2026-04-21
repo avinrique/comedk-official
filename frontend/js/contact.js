@@ -25,15 +25,16 @@ function initContactForm() {
     var isValid = validateForm();
     if (!isValid) return;
 
-    // Collect data
+    // Collect data — omit exam if empty (backend enum-validates it)
     var formData = {
       name: getFieldValue('contactName'),
       email: getFieldValue('contactEmail'),
       phone: getFieldValue('contactPhone'),
-      exam: getFieldValue('contactExam'),
-      message: getFieldValue('contactMessage'),
+      notes: getFieldValue('contactMessage'),
       source: 'website',
     };
+    var examVal = getFieldValue('contactExam');
+    if (examVal) formData.exam = examVal;
 
     // Show loading state
     setLoading(true);

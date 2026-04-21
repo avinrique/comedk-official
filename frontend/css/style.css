@@ -3198,9 +3198,36 @@ select.form-control {
   }
 
   .nav-hamburger {
-    display: none;
+    display: flex;
     z-index: 1001;
   }
+
+  /* Dropdown becomes accordion-style in mobile overlay */
+  .nav-links.open .nav-dropdown {
+    width: 100%;
+    text-align: center;
+  }
+  .nav-links.open .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: var(--space-sm) 0;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: var(--space-sm);
+    min-width: 0;
+  }
+  .nav-links.open .dropdown-menu a {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    color: var(--text-body);
+  }
+  .nav-links.open .dropdown-menu a:hover { color: var(--primary); }
 
   /* Hero mobile */
   .hero {
