@@ -181,6 +181,26 @@
         <p class="hero-home-tagline">Bangalore Engineering Admissions 2026-27</p>
         <h1>Find the right engineering college for your COMEDK, KCET or JEE rank</h1>
         <p class="hero-home-sub">Compare cutoff ranks, fee structures, and admission details for 10 top Bangalore engineering colleges. Free predictor tool included.</p>
+
+        <div class="hero-search-wrap">
+          <form class="hero-search" id="collegeSearchForm" role="search" aria-label="Search colleges" autocomplete="off">
+            <svg class="hero-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="search" id="collegeSearch" name="q" placeholder="Search colleges — try RVCE, MSRIT, BMS, Ramaiah..." aria-label="Search colleges" spellcheck="false">
+            <button type="submit" class="hero-search-btn">Search</button>
+          </form>
+          <div class="hero-search-results" id="collegeResults" hidden role="listbox" aria-label="College search results"></div>
+          <div class="hero-search-hints">
+            Popular:
+            <span data-hint="RVCE">RVCE</span>
+            <span data-hint="MSRIT">MSRIT</span>
+            <span data-hint="BMS">BMS</span>
+            <span data-hint="BIT">BIT</span>
+          </div>
+        </div>
+
         <div class="hero-home-actions">
           <a href="predictor.html" class="btn btn-primary">Check Your Rank &rarr;</a>
           <a href="tel:+918482067016" class="hero-home-phone">
@@ -792,5 +812,145 @@
   <script src="js/config.js"></script>
   <script src="js/api.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Hero college search (fuzzy) -->
+  <script>
+  (function(){
+    var COLLEGES = [
+      {name:"RV College of Engineering", aliases:["rvce","rv","rv college","rv engineering","rvcoe"], url:"rv-college.html", meta:"Mysore Road, Bangalore · NAAC A+ · Autonomous"},
+      {name:"Ramaiah Institute of Technology", aliases:["msrit","ramaiah","msr","ramaiah institute","msramaiah","ms ramaiah"], url:"ramaiah.html", meta:"MSR Nagar, Bangalore · NAAC A+ · Autonomous"},
+      {name:"BMS College of Engineering", aliases:["bms","bmsce","bms college","bms engineering"], url:"bms-college.html", meta:"Bull Temple Road, Bangalore · NAAC A · Autonomous"},
+      {name:"Dayananda Sagar College of Engineering", aliases:["dsce","dayananda","sagar","dayananda sagar","ds","ds college"], url:"dayananda-sagar.html", meta:"Kumaraswamy Layout, Bangalore · NAAC A"},
+      {name:"Nitte Meenakshi Institute of Technology", aliases:["nmit","nitte","meenakshi","nitte institute","nitte meenakshi"], url:"nitte.html", meta:"Yelahanka, Bangalore · NAAC A"},
+      {name:"Sir MVIT", aliases:["mvit","sir mvit","sir m visvesvaraya","visvesvaraya"], url:"sir-mvit.html", meta:"Hunasamaranahalli, Bangalore · NAAC A"},
+      {name:"Bangalore Institute of Technology", aliases:["bit","bangalore institute","bit bangalore"], url:"bit.html", meta:"K R Road, Bangalore · NAAC A"},
+      {name:"CMR Institute of Technology", aliases:["cmrit","cmr","cmr institute","cmr tech"], url:"cmrit.html", meta:"AECS Layout, Bangalore · NAAC A+"},
+      {name:"REVA University", aliases:["reva","reva university","reva uni"], url:"reva.html", meta:"Yelahanka, Bangalore · NAAC A"},
+      {name:"Alliance University", aliases:["alliance","alliance university","alliance uni"], url:"alliance.html", meta:"Anekal, Bangalore · NAAC A+"}
+    ];
+
+    var input = document.getElementById('collegeSearch');
+    var results = document.getElementById('collegeResults');
+    var form = document.getElementById('collegeSearchForm');
+    var hints = document.querySelectorAll('.hero-search-hints span');
+    if (!input || !results) return;
+
+    function norm(s){ return (s||'').toLowerCase().replace(/[^a-z0-9\s]/g,'').replace(/\s+/g,' ').trim(); }
+
+    function editDist(a, b){
+      if (a === b) return 0;
+      if (!a.length) return b.length;
+      if (!b.length) return a.length;
+      var dp = [];
+      for (var i = 0; i <= a.length; i++) { dp[i] = [i]; }
+      for (var j = 0; j <= b.length; j++) { dp[0][j] = j; }
+      for (var i = 1; i <= a.length; i++) {
+        for (var j = 1; j <= b.length; j++) {
+          dp[i][j] = Math.min(
+            dp[i-1][j] + 1,
+            dp[i][j-1] + 1,
+            dp[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1)
+          );
+        }
+      }
+      return dp[a.length][b.length];
+    }
+
+    function scoreMatch(q, c){
+      q = norm(q);
+      if (!q) return 0;
+      var name = norm(c.name);
+      var aliases = c.aliases.map(norm);
+      // exact alias
+      if (aliases.indexOf(q) !== -1) return 100;
+      // prefix matches
+      if (name.indexOf(q) === 0) return 90;
+      for (var i=0;i<aliases.length;i++) if (aliases[i].indexOf(q) === 0) return 88;
+      // substring
+      if (name.indexOf(q) !== -1) return 72;
+      for (var i=0;i<aliases.length;i++) if (aliases[i].indexOf(q) !== -1) return 68;
+      // token AND match (all query words found in name/aliases)
+      var tokens = q.split(' ').filter(Boolean);
+      if (tokens.length > 1) {
+        var hay = name + ' ' + aliases.join(' ');
+        if (tokens.every(function(t){ return hay.indexOf(t) !== -1; })) return 55;
+      }
+      // fuzzy: edit distance on short queries against aliases
+      if (q.length >= 2 && q.length <= 8) {
+        var best = 99;
+        for (var i=0;i<aliases.length;i++) {
+          var d = editDist(q, aliases[i]);
+          if (d < best) best = d;
+        }
+        // allow up to 2 edits for short queries
+        if (best <= 1) return 45;
+        if (best <= 2 && q.length >= 4) return 32;
+      }
+      // first-letter abbreviation (e.g. "rvc" → "RV College")
+      if (q.length >= 2 && q.length <= 5) {
+        var initials = name.split(' ').map(function(w){return w[0];}).join('');
+        if (initials.indexOf(q) === 0) return 42;
+      }
+      return 0;
+    }
+
+    function highlight(text, q){
+      if (!q) return text;
+      var re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'ig');
+      return text.replace(re, '<mark>$1</mark>');
+    }
+
+    function doSearch(q){
+      return COLLEGES
+        .map(function(c){ return {c:c, score:scoreMatch(q,c)}; })
+        .filter(function(x){ return x.score > 0; })
+        .sort(function(a,b){ return b.score - a.score; })
+        .slice(0, 8)
+        .map(function(x){ return x.c; });
+    }
+
+    function render(list, q){
+      if (!list.length) {
+        results.innerHTML = '<div class="hero-search-empty">No matches. Try <strong>RVCE</strong>, <strong>MSRIT</strong>, <strong>BMS</strong>, <strong>DSCE</strong>, <strong>Nitte</strong>, <strong>BIT</strong>, <strong>CMRIT</strong>, <strong>REVA</strong> or <strong>Alliance</strong>.</div>';
+      } else {
+        results.innerHTML = list.map(function(c){
+          return '<a class="hero-search-result" href="' + c.url + '" role="option">' +
+                 '<strong>' + highlight(c.name, q) + '</strong>' +
+                 '<span class="hsr-meta">' + c.meta + '</span>' +
+                 '</a>';
+        }).join('');
+      }
+      results.hidden = false;
+    }
+
+    input.addEventListener('input', function(){
+      var q = this.value.trim();
+      if (!q) { results.hidden = true; results.innerHTML = ''; return; }
+      render(doSearch(q), q);
+    });
+
+    input.addEventListener('focus', function(){
+      if (this.value.trim()) results.hidden = false;
+    });
+
+    document.addEventListener('click', function(e){
+      if (!e.target.closest('.hero-search-wrap')) { results.hidden = true; }
+    });
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var list = doSearch(input.value);
+      if (list.length) window.location.href = list[0].url;
+    });
+
+    hints.forEach(function(el){
+      el.addEventListener('click', function(){
+        input.value = this.getAttribute('data-hint');
+        input.focus();
+        render(doSearch(input.value), input.value);
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
