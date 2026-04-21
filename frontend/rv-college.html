@@ -573,9 +573,9 @@
           notes: 'Inquiry from ' + document.title
         })
       }).then(function() {
-        form.innerHTML = '<p style="text-align:center;color:var(--accent);font-weight:600;padding:20px;">Thank you! We will contact you shortly.</p>';
+        window.location.href = 'thank-you.html';
       }).catch(function() {
-        form.innerHTML = '<p style="text-align:center;color:var(--accent);font-weight:600;padding:20px;">Thank you! We will contact you shortly.</p>';
+        window.location.href = 'thank-you.html';
       });
     });
   }

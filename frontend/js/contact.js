@@ -175,18 +175,10 @@ function initContactForm() {
         throw new Error('Server responded with status ' + response.status);
       }
 
-      // Success
-      setLoading(false);
-      if (successMsg) successMsg.classList.add('visible');
+      // Success — redirect to thank-you page
       form.reset();
-
-      // Scroll to success message
-      successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-      // Auto-hide success message after 8 seconds
-      setTimeout(function () {
-        if (successMsg) successMsg.classList.remove('visible');
-      }, 8000);
+      window.location.href = 'thank-you.html';
+      return;
     } catch (err) {
       // Error
       setLoading(false);

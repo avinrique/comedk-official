@@ -989,11 +989,9 @@ var Predictor = (function () {
 
         await post('/leads', payload);
 
-        // Show success
-        if (dom.leadSuccessMsg) {
-          dom.leadSuccessMsg.style.display = 'flex';
-        }
-        dom.leadCaptureForm.style.display = 'none';
+        // Redirect to thank-you page
+        window.location.href = 'thank-you.html';
+        return;
       } catch (err) {
         console.error('Lead capture error:', err);
         // Show inline error

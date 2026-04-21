@@ -825,6 +825,36 @@
   <script src="js/api.js"></script>
   <script src="js/main.js"></script>
 
+  <!-- Consultation form handler -->
+  <script>
+  (function(){
+    var form = document.getElementById('consultForm');
+    if (!form) return;
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.innerHTML = 'Submitting…'; }
+      var data = {
+        name:  (form.querySelector('[name="name"]')  || {}).value || '',
+        phone: (form.querySelector('[name="phone"]') || {}).value || '',
+        email: (form.querySelector('[name="email"]') || {}).value || '',
+        exam:  (form.querySelector('[name="exam"]')  || {}).value || '',
+        notes: (form.querySelector('[name="message"]') || {}).value || '',
+        source: 'home-consult'
+      };
+      try {
+        var apiBase = (typeof API_BASE_URL !== 'undefined' ? API_BASE_URL : '/api');
+        await fetch(apiBase + '/leads', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(data)
+        });
+      } catch(_){ /* still redirect — user saw the click */ }
+      window.location.href = 'thank-you.html';
+    });
+  })();
+  </script>
+
   <!-- Hero college search (fuzzy) -->
   <script>
   (function(){
