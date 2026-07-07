@@ -1,3 +1,9 @@
 node_modules/
 .env
 .DS_Store
+
+# --- deploy hygiene (added during setup 2026-07-07) ---
+*.bak
+*.bak.*
+frontend.backup.*/
+frontend/Users/

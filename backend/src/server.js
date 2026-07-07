@@ -18,12 +18,24 @@ const predictorRoutes = require('./routes/predictor.routes');
 const usersRoutes = require('./routes/users.routes');
 const settingsRoutes = require('./routes/settings.routes');
 
-const app = express();
-const sslOptions = {
-  key: fs.readFileSync('/etc/letsencrypt/live/lspredictor.com/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/lspredictor.com/fullchain.pem')
-};
+const cors = require('cors');
+const corsOptions = require('./config/cors');
 
+const app = express();
+
+const NEW_KEY = '/etc/letsencrypt/live/lsconsultancyservices.com/privkey.pem';
+const NEW_CERT = '/etc/letsencrypt/live/lsconsultancyservices.com/fullchain.pem';
+const OLD_KEY = '/etc/letsencrypt/live/lspredictor.com/privkey.pem';
+const OLD_CERT = '/etc/letsencrypt/live/lspredictor.com/fullchain.pem';
+const SSL_KEY_PATH = fs.existsSync(NEW_KEY) ? NEW_KEY : OLD_KEY;
+const SSL_CERT_PATH = fs.existsSync(NEW_CERT) ? NEW_CERT : OLD_CERT;
+const useSSL = fs.existsSync(SSL_KEY_PATH) && fs.existsSync(SSL_CERT_PATH);
+const sslOptions = useSSL ? {
+  key: fs.readFileSync(SSL_KEY_PATH),
+  cert: fs.readFileSync(SSL_CERT_PATH)
+} : null;
+
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -43,7 +55,17 @@ app.use('/api/settings', settingsRoutes);
 
 // Serve frontend static files
 const frontendPath = path.join(__dirname, '..', '..', 'frontend');
-app.use(express.static(frontendPath));
+app.use(express.static(frontendPath, {
+  setHeaders: function (res, filePath) {
+    if (filePath.endsWith('.html') || filePath.endsWith('/')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+    } else if (/\.(js|css|svg|png|jpg|jpeg|gif|webp|ico|woff2?)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate');
+    }
+  }
+}));
 
 // For any non-API route, serve the frontend (SPA fallback)
 app.use((req, res) => {
@@ -61,10 +83,17 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    https.createServer(sslOptions, app).listen(PORT, () => {
-      console.log(`LS Predictor HTTPS server running on port ${PORT}`);
-      console.log(`Health check: https://lspredictor.com/api/health`);
-    });
+    if (useSSL) {
+      https.createServer(sslOptions, app).listen(PORT, () => {
+        console.log(`LS Predictor HTTPS server running on port ${PORT}`);
+        console.log(`Health check: https://lsconsultancyservices.com/api/health`);
+      });
+    } else {
+      app.listen(PORT, () => {
+        console.log(`LS Predictor HTTP server running on port ${PORT}`);
+        console.log(`Health check: http://localhost:${PORT}/api/health`);
+      });
+    }
   } catch (err) {
     console.error('Failed to start server:', err.message);
     process.exit(1);

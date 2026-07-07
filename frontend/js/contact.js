@@ -25,15 +25,16 @@ function initContactForm() {
     var isValid = validateForm();
     if (!isValid) return;
 
-    // Collect data
+    // Collect data — omit exam if empty (backend enum-validates it)
     var formData = {
       name: getFieldValue('contactName'),
       email: getFieldValue('contactEmail'),
       phone: getFieldValue('contactPhone'),
-      exam: getFieldValue('contactExam'),
-      message: getFieldValue('contactMessage'),
+      notes: getFieldValue('contactMessage'),
       source: 'website',
     };
+    var examVal = getFieldValue('contactExam');
+    if (examVal) formData.exam = examVal;
 
     // Show loading state
     setLoading(true);
@@ -172,29 +173,29 @@ function initContactForm() {
       });
 
       if (!response.ok) {
-        throw new Error('Server responded with status ' + response.status);
+        var detail;
+        try {
+          var body = await response.json();
+          detail = body && (body.message || body.error) ? (body.message || body.error) : '';
+          if (body && body.errors && body.errors.length) {
+            detail += ' — ' + body.errors.map(function(e){ return (e.field||'?') + ': ' + (e.message||''); }).join('; ');
+          }
+        } catch(_) {}
+        throw new Error('HTTP ' + response.status + (detail ? ' — ' + detail : ''));
       }
 
-      // Success
-      setLoading(false);
-      if (successMsg) successMsg.classList.add('visible');
+      // Success — redirect to thank-you page
       form.reset();
-
-      // Scroll to success message
-      successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-      // Auto-hide success message after 8 seconds
-      setTimeout(function () {
-        if (successMsg) successMsg.classList.remove('visible');
-      }, 8000);
+      window.location.href = 'thank-you.html';
+      return;
     } catch (err) {
-      // Error
+      // Error — show actual message so we can diagnose
       setLoading(false);
-      if (errorMsg) errorMsg.classList.add('visible');
-
-      // Scroll to error message
-      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
+      if (errorMsg) {
+        errorMsg.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> ' + (err && err.message ? err.message : 'Unknown error');
+        errorMsg.classList.add('visible');
+        errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
       console.error('Contact form submission error:', err);
     }
   }

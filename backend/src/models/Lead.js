@@ -84,7 +84,7 @@ const leadSchema = new mongoose.Schema(
     },
     source: {
       type: String,
-      enum: ['predictor', 'website', 'whatsapp', 'referral', 'walk-in', 'phone'],
+      enum: ['predictor', 'website', 'whatsapp', 'referral', 'walk-in', 'phone', 'college-page', 'home-consult'],
       default: 'website',
     },
     assignedTo: {

@@ -15,6 +15,7 @@ var Predictor = (function () {
   var allResults = [];
   var currentPage = 1;
   var perPage = 20;
+  var FREE_LIMIT = 3; // number of results shown for free before the lead gate
   var inputMode = 'marks'; // 'marks' or 'rank'
   var sortColumn = null;
   var sortDirection = 'asc';
@@ -109,10 +110,11 @@ var Predictor = (function () {
     dom.statTotalMatches = document.getElementById('statTotalMatches');
     dom.resultsSection = document.getElementById('resultsSection');
     dom.resultsCount = document.getElementById('resultsCount');
-    dom.resultsTable = document.getElementById('resultsTable');
-    dom.resultsTableBody = document.getElementById('resultsTableBody');
+    dom.resultsCardsGrid = document.getElementById('resultsCardsGrid');
+    dom.sortSelect = document.getElementById('sortSelect');
     dom.resultsEmpty = document.getElementById('resultsEmpty');
     dom.resultsPagination = document.getElementById('resultsPagination');
+    dom.resultsLockedCta = document.getElementById('resultsLockedCta');
     dom.leadCaptureCard = document.getElementById('leadCaptureCard');
     dom.leadCaptureForm = document.getElementById('leadCaptureForm');
     dom.leadSuccessMsg = document.getElementById('leadSuccessMsg');
@@ -225,15 +227,13 @@ var Predictor = (function () {
 
       leadGateSubmitted = true;
 
-      // Close gate and show results
+      // Close gate and re-render the now-unlocked full list
       dom.leadGateOverlay.style.display = 'none';
       document.body.style.overflow = '';
 
-      if (pendingResults) {
-        renderResults(pendingResults);
-        showResults();
-        pendingResults = null;
-      }
+      currentPage = 1;
+      renderResults(pendingResults || results);
+      showResults();
     } catch (err) {
       dom.leadGateError.textContent = err.message || 'Something went wrong. Please try again.';
       dom.leadGateError.style.display = 'block';
@@ -553,14 +553,10 @@ var Predictor = (function () {
         sortColumn = null;
         sortDirection = 'asc';
 
-        // If gate is enabled and user hasn't submitted yet, show gate modal
-        if (leadGateEnabled && !leadGateSubmitted) {
-          pendingResults = results;
-          hideLoading();
-          showLeadGate();
-          return;
-        }
-
+        // Show results immediately. The first FREE_LIMIT are free; the rest
+        // stay locked behind the lead gate (via the "Show more" CTA) until
+        // the user submits their details.
+        pendingResults = results;
         renderResults(results);
         showResults();
       } else {
@@ -617,9 +613,15 @@ var Predictor = (function () {
     if (dom.statPessimisticRank) dom.statPessimisticRank.textContent = formatRank(pessimistic);
     if (dom.statTotalMatches) dom.statTotalMatches.textContent = total;
 
+    var gated = leadGateEnabled && !leadGateSubmitted;
+
     // Results count
     if (dom.resultsCount) {
-      dom.resultsCount.textContent = total + ' college' + (total !== 1 ? 's' : '') + ' found';
+      if (gated && total > FREE_LIMIT) {
+        dom.resultsCount.textContent = 'Showing ' + FREE_LIMIT + ' of ' + total + ' colleges';
+      } else {
+        dom.resultsCount.textContent = total + ' college' + (total !== 1 ? 's' : '') + ' found';
+      }
     }
 
     // Render table or empty state
@@ -628,16 +630,28 @@ var Predictor = (function () {
     } else {
       hideEmptyState();
       renderTablePage();
-      renderPagination();
+      // Pagination only makes sense once the full list is unlocked
+      if (gated && total > FREE_LIMIT) {
+        if (dom.resultsPagination) dom.resultsPagination.style.display = 'none';
+      } else {
+        renderPagination();
+      }
     }
   }
 
   function renderTablePage() {
-    if (!dom.resultsTableBody) return;
+    if (!dom.resultsCardsGrid) return;
 
-    var start = (currentPage - 1) * perPage;
-    var end = start + perPage;
-    var pageResults = allResults.slice(start, end);
+    var gated = leadGateEnabled && !leadGateSubmitted;
+    var pageResults;
+    if (gated) {
+      // Free preview: only the top FREE_LIMIT results
+      pageResults = allResults.slice(0, FREE_LIMIT);
+    } else {
+      var start = (currentPage - 1) * perPage;
+      var end = start + perPage;
+      pageResults = allResults.slice(start, end);
+    }
 
     var html = '';
     pageResults.forEach(function (item) {
@@ -652,25 +666,60 @@ var Predictor = (function () {
       var chanceClass = getChanceClass(chance);
       var chanceLabel = getChanceLabel(chance);
 
-      html += '<tr>' +
-        '<td>' +
-          '<div class="college-name">' + escapeHtml(collegeName) + '</div>' +
-          (location ? '<div class="college-location">' + escapeHtml(location) + '</div>' : '') +
-        '</td>' +
-        '<td>' + escapeHtml(branch) + '</td>' +
-        '<td>' + escapeHtml(category) + '</td>' +
-        '<td>' + formatRank(cutoffRank) + '</td>' +
-        '<td>' + formatRank(yourRank) + '</td>' +
-        '<td>' +
+      html += '<div class="college-card ' + chanceClass + '">' +
+        '<div class="college-card-top">' +
+          '<div class="college-card-info">' +
+            '<h4 class="college-card-name">' + escapeHtml(collegeName) + '</h4>' +
+            (location ? '<span class="college-card-location"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' + escapeHtml(location) + '</span>' : '') +
+          '</div>' +
           '<span class="chance-badge ' + chanceClass + '">' +
             '<span class="chance-dot"></span>' +
             chanceLabel +
           '</span>' +
-        '</td>' +
-      '</tr>';
+        '</div>' +
+        '<div class="college-card-tags">' +
+          '<span class="card-tag branch-tag">' + escapeHtml(branch) + '</span>' +
+          (category ? '<span class="card-tag category-tag">' + escapeHtml(category) + '</span>' : '') +
+        '</div>' +
+        '<div class="college-card-ranks">' +
+          '<div class="rank-item">' +
+            '<span class="rank-label">Cutoff Rank</span>' +
+            '<span class="rank-value">' + formatRank(cutoffRank) + '</span>' +
+          '</div>' +
+          '<div class="rank-divider"></div>' +
+          '<div class="rank-item">' +
+            '<span class="rank-label">Your Rank</span>' +
+            '<span class="rank-value your-rank">' + formatRank(yourRank) + '</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
     });
 
-    dom.resultsTableBody.innerHTML = html;
+    dom.resultsCardsGrid.innerHTML = html;
+    renderLockedCta(gated);
+  }
+
+  // ---- Show-more lead gate CTA ----
+  function renderLockedCta(gated) {
+    if (!dom.resultsLockedCta) return;
+    var hidden = allResults.length - FREE_LIMIT;
+    if (gated && hidden > 0) {
+      dom.resultsLockedCta.innerHTML =
+        '<div style="text-align:center;padding:30px 20px;margin-top:18px;border:1px dashed #c9d2e0;border-radius:14px;background:linear-gradient(180deg,#f7f8fc,#eef2f8);">' +
+          '<div style="width:48px;height:48px;border-radius:50%;background:#e8eef5;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">' +
+            '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>' +
+          '</div>' +
+          '<h4 style="margin:0 0 6px;font-size:1.1rem;color:#1e3a5f;">' + hidden + ' more matching college' + (hidden !== 1 ? 's' : '') + ' available</h4>' +
+          '<p style="margin:0 auto 18px;max-width:440px;color:#555770;font-size:.9rem;line-height:1.55;">You\'re viewing your top ' + FREE_LIMIT + ' matches for free. Enter your details to unlock the full list with all cutoff ranks and admission chances.</p>' +
+          '<button type="button" id="showMoreBtn" class="btn btn-primary">Show more colleges</button>' +
+        '</div>';
+      dom.resultsLockedCta.style.display = 'block';
+      var btn = document.getElementById('showMoreBtn');
+      if (btn) btn.addEventListener('click', showLeadGate);
+    } else {
+      dom.resultsLockedCta.style.display = 'none';
+      dom.resultsLockedCta.innerHTML = '';
+    }
   }
 
   // ---- Chance Badge Logic ----
@@ -791,47 +840,29 @@ var Predictor = (function () {
     return pages;
   }
 
-  // ---- Table Sorting ----
+  // ---- Sort Dropdown ----
   function setupTableSorting() {
-    if (!dom.resultsTable) return;
+    if (!dom.sortSelect) return;
 
-    var headers = dom.resultsTable.querySelectorAll('th[data-sort]');
-    headers.forEach(function (th) {
-      th.addEventListener('click', function () {
-        var column = th.getAttribute('data-sort');
+    dom.sortSelect.addEventListener('change', function () {
+      var val = dom.sortSelect.value;
+      var parts = val.split('-');
+      var column = parts[0];
+      var direction = parts[1];
 
-        // Toggle direction
-        if (sortColumn === column) {
-          sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-        } else {
-          sortColumn = column;
-          sortDirection = 'asc';
-        }
+      sortColumn = column;
+      sortDirection = direction;
 
-        // Update visual state on headers
-        headers.forEach(function (h) {
-          h.classList.remove('sorted');
-        });
-        th.classList.add('sorted');
+      sortResults(column, direction);
 
-        // Update sort icon direction
-        var icon = th.querySelector('.sort-icon');
-        if (icon) {
-          if (sortDirection === 'desc') {
-            icon.style.transform = 'rotate(180deg)';
-          } else {
-            icon.style.transform = 'rotate(0deg)';
-          }
-        }
-
-        // Sort allResults
-        sortResults(column, sortDirection);
-
-        // Re-render
-        currentPage = 1;
-        renderTablePage();
+      currentPage = 1;
+      renderTablePage();
+      var gated = leadGateEnabled && !leadGateSubmitted;
+      if (gated && allResults.length > FREE_LIMIT) {
+        if (dom.resultsPagination) dom.resultsPagination.style.display = 'none';
+      } else {
         renderPagination();
-      });
+      }
     });
   }
 
@@ -928,19 +959,13 @@ var Predictor = (function () {
 
   function showEmptyState() {
     if (dom.resultsEmpty) dom.resultsEmpty.style.display = 'block';
-    if (dom.resultsTableBody) dom.resultsTableBody.innerHTML = '';
+    if (dom.resultsCardsGrid) dom.resultsCardsGrid.innerHTML = '';
     if (dom.resultsPagination) dom.resultsPagination.style.display = 'none';
 
-    // Hide table header row when empty
-    var thead = dom.resultsTable ? dom.resultsTable.querySelector('thead') : null;
-    if (thead) thead.style.display = 'none';
   }
 
   function hideEmptyState() {
     if (dom.resultsEmpty) dom.resultsEmpty.style.display = 'none';
-
-    var thead = dom.resultsTable ? dom.resultsTable.querySelector('thead') : null;
-    if (thead) thead.style.display = '';
   }
 
   // ---- Lead Capture ----
@@ -1007,11 +1032,9 @@ var Predictor = (function () {
 
         await post('/leads', payload);
 
-        // Show success
-        if (dom.leadSuccessMsg) {
-          dom.leadSuccessMsg.style.display = 'flex';
-        }
-        dom.leadCaptureForm.style.display = 'none';
+        // Redirect to thank-you page
+        window.location.href = 'thank-you.html';
+        return;
       } catch (err) {
         console.error('Lead capture error:', err);
         // Show inline error
