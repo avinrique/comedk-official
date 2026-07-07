@@ -135,6 +135,44 @@
 }
 .hero-search-hints span:hover { background: rgba(255,255,255,0.22); }
 
+/* Consent checkbox (injected into the college-search form) — keep the
+   search row (icon + input + button) on one line and drop the long
+   consent text onto its own line below as fine print, instead of
+   cramming it inline where it squashed the input on mobile. */
+.hero-search { flex-wrap: wrap; row-gap: 8px; align-items: center; border-radius: 20px; padding: 8px 8px 12px 16px; }
+.hero-search .hero-search-icon { order: 0; }
+.hero-search input[type="search"] { order: 1; }
+.hero-search .hero-search-btn { order: 2; }
+.hero-search .consent-group {
+  order: 3;
+  flex: 1 1 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 2px 6px 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  text-align: left;
+  cursor: pointer;
+}
+.hero-search .consent-group .consent-check {
+  margin-top: 1px;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  accent-color: var(--primary);
+}
+.hero-search .consent-error {
+  order: 4;
+  flex: 1 1 100%;
+  margin: 0 6px;
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
 .hero-visual {
   position: relative;
   width: 100%;
