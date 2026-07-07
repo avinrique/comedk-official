@@ -265,8 +265,12 @@
 .hero-float-3 strong { font-size: 1rem; font-weight: 700; display: block; }
 
 @media (max-width: 900px) {
-  .hero-home .container { grid-template-columns: 1fr; gap: var(--space-xl); }
-  .hero-visual { max-width: 360px; margin: 0 auto; }
+  /* minmax(0,1fr) lets the single column shrink below its content's
+     min-width; without it the track grew to ~451px and clipped the
+     hero (headline, sub-text, chips, search, phone) on narrow screens */
+  .hero-home .container { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .hero-home-inner { min-width: 0; max-width: 100%; }
+  .hero-visual { max-width: 360px; margin: 0 auto; min-width: 0; }
   .hero-float-1 { left: -4%; }
   .hero-float-2 { right: -2%; }
   .hero-float-3 { left: -8%; }
